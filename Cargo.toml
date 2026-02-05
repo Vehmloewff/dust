@@ -1,0 +1,15 @@
+[package]
+name = "dust"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+path = "mod.rs"
+
+[[bin]]
+name = "dust"
+path = "cli/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+rupert = { git = "ssh://github.com/vehmloewff/rupert", rev = "de76fab" }
