@@ -1,2 +1,5 @@
-45 + (34 * (2 / (32 + 10)))
-(45 + ((34 * 2) / 32)) + 10
+fn hello() {
+	let name = "World";
+
+	print("Hello, ${name}!");
+}

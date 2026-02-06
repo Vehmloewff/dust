@@ -1,10 +1,16 @@
-mod expression;
-mod whitespace;
+mod lexer;
+mod stream;
 
-use rupert::{Diagnostic, parse};
+pub use crate::parser::lexer::{lex, Token};
 
-use crate::parser::expression::{Expression, parse_expression};
+#[derive(Debug)]
+pub enum Expression {}
 
-pub fn parse(code: &str) -> (Option<Expression>, Vec<Diagnostic>) {
-	parse!(code, parse_expression)
+#[derive(Debug)]
+pub struct Diagnostic {
+	pub message: String,
+}
+
+pub fn parse(_code: &str) -> (Option<Expression>, Vec<Diagnostic>) {
+	(None, vec![])
 }

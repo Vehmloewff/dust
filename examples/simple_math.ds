@@ -1,0 +1,125 @@
+// A simple program that does some basic math and such.
+
+fn main() {
+	let celsius = 25.0;
+	let f = celsius_to_fahrenheit(celsius);
+	print("${celsius} C = ${f} F");
+
+	let principal = 10000.0;
+	let rate = 0.05;
+	let years = 3;
+	let monthly = loan_payment_monthly(principal, rate, years);
+	print("Loan payment: ${monthly} per month");
+
+	let n = 10;
+	let fib_n = fibonacci(n);
+	print("fibonacci(${n}) = ${fib_n}");
+
+	let a = 48;
+	let b = 18;
+	let g = gcd(a, b);
+	print("gcd(${a}, ${b}) = ${g}");
+
+	let x = 5;
+	let fact_x = factorial(x);
+	print("factorial(${x}) = ${fact_x}");
+
+	let base = 2.0;
+	let exp = 10;
+	let p = int_power(base, exp);
+	print("${base}^${exp} = ${p}");
+}
+
+fn celsius_to_fahrenheit(c: f64) -> f64 {
+	return c * 9.0 / 5.0 + 32.0;
+}
+
+fn fahrenheit_to_celsius(f: f64) -> f64 {
+	return (f - 32.0) * 5.0 / 9.0;
+}
+
+fn loan_payment_monthly(principal: f64, annual_rate: f64, years: i32) -> f64 {
+	let n = years * 12;
+	let r = annual_rate / 12.0;
+	let factor = int_power(1.0 + r, n);
+	return principal * r * factor / (factor - 1.0);
+}
+
+fn fibonacci(n: i32) -> i32 {
+	if (n <= 0) {
+		return 0;
+	}
+	if (n == 1) {
+		return 1;
+	}
+	return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+fn gcd(a: i32, b: i32) -> i32 {
+	if (b == 0) {
+		return a;
+	}
+	return gcd(b, a % b);
+}
+
+fn factorial(n: i32) -> i32 {
+	if (n <= 1) {
+		return 1;
+	}
+	return n * factorial(n - 1);
+}
+
+fn int_power(base: f64, exp: i32) -> f64 {
+	if (exp == 0) {
+		return 1.0;
+	}
+	let half = int_power(base, exp / 2);
+	let sq = half * half;
+	if (exp % 2 == 1) {
+		return base * sq;
+	}
+	return sq;
+}
+
+fn min_two(a: f64, b: f64) -> f64 {
+	if (a < b) {
+		return a;
+	}
+	return b;
+}
+
+fn max_two(a: f64, b: f64) -> f64 {
+	if (a > b) {
+		return a;
+	}
+	return b;
+}
+
+fn clamp(low: f64, x: f64, high: f64) -> f64 {
+	if (x < low) {
+		return low;
+	}
+	if (x > high) {
+		return high;
+	}
+	return x;
+}
+
+fn abs_val(x: f64) -> f64 {
+	if (x < 0) {
+		return -x;
+	}
+	return x;
+}
+
+fn is_even(n: i32) -> bool {
+	return n % 2 == 0;
+}
+
+fn circle_area(radius: f64) -> f64 {
+	return 3.14159265359 * radius * radius;
+}
+
+fn average_three(a: f64, b: f64, c: f64) -> f64 {
+	return (a + b + c) / 3.0;
+}

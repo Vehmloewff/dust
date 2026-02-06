@@ -13,3 +13,5 @@ path = "cli/main.rs"
 [dependencies]
 clap = { version = "4", features = ["derive"] }
 rupert = { git = "ssh://github.com/vehmloewff/rupert", rev = "de76fab" }
+serde = { version = "1.0.228", features = ["derive"] }
+termcolor = "1.4"
