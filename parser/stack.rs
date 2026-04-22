@@ -1,16 +1,14 @@
-use crate::parser::syntax_tree::{ChildRef, Node, NodeChild, Structure};
+use crate::parser::syntax_tree::{ChildRef, Excess, Missing, Node, NodeChild, Structure};
 use crate::parser::token_stream::TokenStream;
 use crate::parser::{Token, TokenKind};
 use std::mem;
 
-pub type Mark = usize;
 pub type NodeScope = usize;
 
-/// Parser state: stream, token buffers, and diagnostics.
+/// Parser state: stream and token buffers.
 pub struct Stack {
 	stream: TokenStream,
 	buffers: Vec<Vec<NodeChild>>,
-	diags: Vec<super::Diagnostic>,
 }
 
 impl Stack {
@@ -18,12 +16,7 @@ impl Stack {
 		Self {
 			stream,
 			buffers: vec![Vec::new()],
-			diags: Vec::new(),
 		}
-	}
-
-	pub fn finish(self) -> Vec<super::Diagnostic> {
-		self.diags
 	}
 
 	pub fn is_at_end(&self) -> bool {
@@ -42,17 +35,14 @@ impl Stack {
 		self.flush_trivia_into_buffer();
 		match self.stream.advance() {
 			Some(token) => self.push_token(token),
-			None => ChildRef::Missing,
+			None => ChildRef::Missing(Missing::default()),
 		}
 	}
 
 	pub fn expect(&mut self, want: &Token, msg: &str) -> ChildRef {
 		match self.peek() {
 			Some(token) if self.tokens_match(token, want) => self.advance(),
-			_ => {
-				self.error(msg);
-				ChildRef::Missing
-			}
+			_ => self.missing(msg),
 		}
 	}
 
@@ -62,23 +52,12 @@ impl Stack {
 	{
 		match self.peek() {
 			Some(token) if pred(token) => self.advance(),
-			_ => {
-				self.error(msg);
-				ChildRef::Missing
-			}
+			_ => self.missing(msg),
 		}
 	}
 
-	pub fn error(&mut self, msg: impl Into<String>) {
-		self.diags.push(super::Diagnostic { message: msg.into() });
-	}
-
-	pub fn mark(&self) -> Mark {
-		self.active_buffer().len()
-	}
-
-	pub fn child(&self, mark: Mark) -> ChildRef {
-		ChildRef::Index(mark)
+	pub fn missing(&self, msg: impl Into<String>) -> ChildRef {
+		ChildRef::Missing(Missing::with_message(msg))
 	}
 
 	pub fn start_node(&mut self) -> NodeScope {
@@ -91,14 +70,25 @@ impl Stack {
 	where
 		T: Into<Structure>,
 	{
+		let node = self.finish_node_detached(scope, structure);
+		self.push_node(node)
+	}
+
+	pub fn finish_node_detached<T>(&mut self, scope: NodeScope, structure: T) -> Node
+	where
+		T: Into<Structure>,
+	{
 		debug_assert_eq!(scope + 1, self.buffers.len());
-		let tokens = self.buffers.pop().expect("node scope buffer must exist");
-		let content_length = tokens.len();
-		let node = Node {
-			tokens,
+		let children = self.buffers.pop().expect("node scope buffer must exist");
+		let content_length = children.len();
+		Node {
+			children,
 			structure: structure.into(),
 			content_length,
-		};
+		}
+	}
+
+	pub fn push_node(&mut self, node: Node) -> ChildRef {
 		let idx = self.active_buffer().len();
 		self.active_buffer_mut().push(NodeChild::Node(node));
 		ChildRef::Index(idx)
@@ -128,7 +118,7 @@ impl Stack {
 				None => return None,
 				Some(kind) if Self::is_boundary(kind, boundaries) => return None,
 				Some(_) => {
-					if !self.advance_excess() {
+					if !self.advance_excess(None::<String>) {
 						return None;
 					}
 				}
@@ -141,22 +131,27 @@ impl Stack {
 		T: Into<Structure>,
 	{
 		debug_assert_eq!(self.buffers.len(), 1);
-		let tokens = mem::take(self.active_buffer_mut());
-		let content_length = tokens.len();
+		let children = mem::take(self.active_buffer_mut());
+		let content_length = children.len();
 		Node {
-			tokens,
+			children,
 			structure: structure.into(),
 			content_length,
 		}
 	}
 
-	pub(crate) fn skip_until(&mut self, boundaries: &[TokenKind]) -> bool {
+	pub(crate) fn skip_until(&mut self, boundaries: &[TokenKind], msg: Option<&str>) -> bool {
+		let mut attached = false;
 		loop {
 			match self.peek_kind() {
 				None => return false,
 				Some(kind) if Self::is_boundary(kind, boundaries) => return true,
 				Some(_) => {
-					let _ = self.stream.advance();
+					let diagnostic = if attached { None } else { msg.map(str::to_owned) };
+					if !self.advance_excess(diagnostic) {
+						return false;
+					}
+					attached = true;
 				}
 			}
 		}
@@ -192,18 +187,28 @@ impl Stack {
 		loop {
 			let token = self.stream.peek_n(offset)?;
 			if !TokenStream::is_trivia(token) {
+				if matches!(token, Token::Eof) {
+					return None;
+				}
 				return Some(token);
 			}
 			offset += 1;
 		}
 	}
 
-	fn advance_excess(&mut self) -> bool {
+	fn advance_excess<T>(&mut self, msg: Option<T>) -> bool
+	where
+		T: Into<String>,
+	{
 		self.flush_trivia_into_buffer();
 		let Some(token) = self.stream.advance() else {
 			return false;
 		};
-		self.active_buffer_mut().push(NodeChild::Excess(token));
+		let excess = match msg {
+			Some(msg) => Excess::with_message(token, msg),
+			None => Excess::new(token),
+		};
+		self.active_buffer_mut().push(NodeChild::Excess(excess));
 		true
 	}
 

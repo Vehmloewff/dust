@@ -3,17 +3,20 @@ use super::stack::Stack;
 use crate::parser::Token;
 use crate::parser::TokenKind;
 use crate::parser::lexer::{ComparisonOperator, Mode, Operator};
-use crate::parser::syntax_tree::ChildRef;
+use crate::parser::syntax_tree::{BinaryExpr, CallExpr, ChildRef, IfExpr, ParenExpr, Structure, UnaryExpr};
 
-/// Parse an expression with infix precedence. Returns the starting child when we parsed something.
 pub fn parse_expression(stack: &mut Stack) -> Option<ChildRef> {
-	parse_expression_bp(stack, 0)
+	let node = parse_expression_detached(stack)?;
+	Some(stack.push_node(node))
 }
 
-fn parse_expression_bp(stack: &mut Stack, min_bp: u8) -> Option<ChildRef> {
-	let start = stack.mark();
-	parse_prefix_expression(stack)?;
-	parse_postfix_expression(stack);
+pub(crate) fn parse_expression_detached(stack: &mut Stack) -> Option<crate::parser::Node> {
+	parse_expression_node_bp(stack, 0)
+}
+
+fn parse_expression_node_bp(stack: &mut Stack, min_bp: u8) -> Option<crate::parser::Node> {
+	let mut lhs = parse_prefix_expression_node(stack)?;
+	lhs = parse_postfix_expression_node(stack, lhs);
 
 	loop {
 		let Some((left_bp, right_bp)) = peek_infix_binding_power(stack) else {
@@ -23,64 +26,87 @@ fn parse_expression_bp(stack: &mut Stack, min_bp: u8) -> Option<ChildRef> {
 			break;
 		}
 
-		let _op = stack.advance();
-		if parse_expression_bp(stack, right_bp).is_none() {
-			stack.error("expected expression after operator");
-			break;
-		}
+		let scope = stack.start_node();
+		let left = stack.push_node(lhs);
+		let op = stack.advance();
+		let right = match parse_expression_node_bp(stack, right_bp) {
+			Some(rhs) => stack.push_node(rhs),
+			None => stack.missing("expected expression after operator"),
+		};
+		lhs = stack.finish_node_detached(scope, BinaryExpr { left, op, right });
 	}
 
-	Some(stack.child(start))
+	Some(lhs)
 }
 
-fn parse_prefix_expression(stack: &mut Stack) -> Option<()> {
+fn parse_prefix_expression_node(stack: &mut Stack) -> Option<crate::parser::Node> {
 	match stack.peek()? {
 		Token::Ident(_) => {
-			let _ = stack.advance();
-			Some(())
+			let scope = stack.start_node();
+			let ident = stack.advance();
+			Some(stack.finish_node_detached(scope, Structure::Ident(ident)))
 		}
-		Token::Number(_) | Token::String(..) | Token::RawString(..) => {
-			let _ = stack.advance();
-			Some(())
+		Token::Number(_) => {
+			let scope = stack.start_node();
+			let number = stack.advance();
+			Some(stack.finish_node_detached(scope, Structure::NumberLit(number)))
+		}
+		Token::String(..) | Token::RawString(..) => {
+			let scope = stack.start_node();
+			let string = stack.advance();
+			Some(stack.finish_node_detached(scope, Structure::StringLit(string)))
 		}
 		Token::Paren(Mode::Open) => {
-			let _ = stack.advance();
-			if stack.subparse(&[TokenKind::CloseParen], parse_expression).is_none() {
-				stack.error("expected expression after '('");
-			}
-			let _ = stack.expect(&Token::Paren(Mode::Close), "expected ')'");
-			Some(())
+			let scope = stack.start_node();
+			let open_paren = stack.advance();
+			let expr = match stack.subparse(&[TokenKind::CloseParen], parse_expression) {
+				Some(expr) => expr,
+				None => stack.missing("expected expression after '('"),
+			};
+			let close_paren = stack.expect(&Token::Paren(Mode::Close), "expected ')'");
+			Some(stack.finish_node_detached(
+				scope,
+				ParenExpr {
+					open_paren,
+					expr,
+					close_paren,
+				},
+			))
 		}
 		Token::Negate | Token::Operator(Operator::Sub) => {
-			let _ = stack.advance();
-			if parse_expression_bp(stack, 14).is_none() {
-				stack.error("expected expression after unary operator");
-			}
-			Some(())
+			let scope = stack.start_node();
+			let op = stack.advance();
+			let operand = match parse_expression_node_bp(stack, 14) {
+				Some(operand) => stack.push_node(operand),
+				None => stack.missing("expected expression after unary operator"),
+			};
+			Some(stack.finish_node_detached(scope, UnaryExpr { op, operand }))
 		}
 		Token::If => {
-			let _ = stack.advance();
-			if stack.subparse(&[TokenKind::OpenBrace], parse_expression).is_none() {
-				stack.error("expected condition after 'if'");
-			}
-			let _block = blocks::parse_block(stack);
-			Some(())
+			let scope = stack.start_node();
+			let keyword = stack.advance();
+			let condition = match stack.subparse(&[TokenKind::OpenBrace], parse_expression) {
+				Some(condition) => condition,
+				None => stack.missing("expected condition after 'if'"),
+			};
+			let block = blocks::parse_block_node(stack);
+			Some(stack.finish_node_detached(scope, IfExpr { keyword, condition, block }))
 		}
-		Token::Brace(Mode::Open) => {
-			let _block = blocks::parse_block(stack);
-			Some(())
-		}
+		Token::Brace(Mode::Open) => Some(blocks::parse_block_detached(stack)),
 		_ => None,
 	}
 }
 
-fn parse_postfix_expression(stack: &mut Stack) {
+fn parse_postfix_expression_node(stack: &mut Stack, mut lhs: crate::parser::Node) -> crate::parser::Node {
 	loop {
 		if !matches!(stack.peek(), Some(Token::Paren(Mode::Open))) {
 			break;
 		}
 
-		let _ = stack.advance();
+		let scope = stack.start_node();
+		let callee = stack.push_node(lhs);
+		let open_paren = stack.advance();
+		let mut args = Vec::new();
 		loop {
 			if matches!(stack.peek(), Some(Token::Paren(Mode::Close))) {
 				break;
@@ -89,11 +115,10 @@ fn parse_postfix_expression(stack: &mut Stack) {
 				break;
 			}
 
-			if stack
-				.subparse(&[TokenKind::Comma, TokenKind::CloseParen], parse_expression)
-				.is_none()
-			{
-				stack.error("expected expression in argument list");
+			if let Some(arg) = stack.subparse(&[TokenKind::Comma, TokenKind::CloseParen], parse_expression) {
+				args.push(arg);
+			} else {
+				args.push(stack.missing("expected expression in argument list"));
 			}
 
 			match stack.peek() {
@@ -102,16 +127,29 @@ fn parse_postfix_expression(stack: &mut Stack) {
 				}
 				Some(Token::Paren(Mode::Close)) => break,
 				_ => {
-					stack.error("expected ',' or ')' in argument list");
-					stack.skip_until(&[TokenKind::Comma, TokenKind::CloseParen]);
+					stack.skip_until(
+						&[TokenKind::Comma, TokenKind::CloseParen],
+						Some("expected ',' or ')' in argument list"),
+					);
 					if matches!(stack.peek(), Some(Token::Comma)) {
 						let _ = stack.advance();
 					}
 				}
 			}
 		}
-		let _ = stack.expect(&Token::Paren(Mode::Close), "expected ')'");
+		let close_paren = stack.expect(&Token::Paren(Mode::Close), "expected ')'");
+		lhs = stack.finish_node_detached(
+			scope,
+			CallExpr {
+				callee,
+				open_paren,
+				args,
+				close_paren,
+			},
+		);
 	}
+
+	lhs
 }
 
 fn peek_infix_binding_power(stack: &mut Stack) -> Option<(u8, u8)> {

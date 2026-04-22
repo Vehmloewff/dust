@@ -25,8 +25,10 @@ pub fn parse_file(stack: &mut Stack) -> Node {
 				}
 			}
 			_ => {
-				stack.error("expected function definition");
-				let recovered = stack.skip_until(&[TokenKind::Semi, TokenKind::CloseBrace, TokenKind::Fn]);
+				let recovered = stack.skip_until(
+					&[TokenKind::Semi, TokenKind::CloseBrace, TokenKind::Fn],
+					Some("expected function definition"),
+				);
 				if !recovered && stack.is_at_end() {
 					break;
 				}
@@ -69,15 +71,17 @@ fn parse_function_def_inner(stack: &mut Stack) -> Option<FunctionDef> {
 			}
 			Some(Token::Paren(Mode::Close)) => break,
 			_ => {
-				stack.error("expected ',' or ')' in parameter list");
-				stack.skip_until(&[TokenKind::CloseParen, TokenKind::Semi]);
+				stack.skip_until(
+					&[TokenKind::CloseParen, TokenKind::Semi],
+					Some("expected ',' or ')' in parameter list"),
+				);
 			}
 		}
 	}
 	let close_paren = stack.expect(&Token::Paren(Mode::Close), "expected ')'");
 	let arrow = stack.expect(&Token::Arrow, "expected '->'");
 	let return_type = stack.expect_where(|t| matches!(t, Token::Ident(_)), "expected return type");
-	let block = blocks::parse_block(stack);
+	let block = blocks::parse_block_node(stack);
 	Some(FunctionDef {
 		fn_keyword: fn_kw,
 		name,

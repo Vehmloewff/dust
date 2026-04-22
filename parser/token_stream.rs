@@ -21,9 +21,9 @@ impl TokenStream {
 		self.pos
 	}
 
-	/// True if we are past the last token.
+	/// True if we are past the last token or positioned at EOF.
 	pub fn is_at_end(&self) -> bool {
-		self.pos >= self.tokens.len()
+		self.pos >= self.tokens.len() || matches!(self.tokens.get(self.pos), Some(Token::Eof))
 	}
 
 	/// Peek at the token at the current position without advancing.
@@ -59,6 +59,9 @@ impl TokenStream {
 		while p < self.tokens.len() {
 			let t = &self.tokens[p];
 			if !Self::is_trivia(t) {
+				if matches!(t, Token::Eof) {
+					return None;
+				}
 				return Some(t);
 			}
 			p += 1;

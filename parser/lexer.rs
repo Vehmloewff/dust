@@ -129,6 +129,7 @@ pub enum TokenKind {
 	Comment,
 	Unknown,
 	StringNotTerminated,
+	Eof,
 }
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -168,6 +169,8 @@ pub enum Token {
 	Unknown(String),
 	/// A zero-width token that is placed at the end of a file if it contained an unterminated string literal
 	StringNotTerminated,
+	/// A zero-width token at the end of every file.
+	Eof,
 }
 
 impl Token {
@@ -207,6 +210,7 @@ impl From<&Token> for TokenKind {
 			Token::Comment(_) => TokenKind::Comment,
 			Token::Unknown(_) => TokenKind::Unknown,
 			Token::StringNotTerminated => TokenKind::StringNotTerminated,
+			Token::Eof => TokenKind::Eof,
 		}
 	}
 }
@@ -563,6 +567,7 @@ pub fn lex(code: &str) -> Vec<Token> {
 		}
 	}
 
+	tokens.push(Token::Eof);
 	tokens
 }
 
@@ -651,6 +656,7 @@ impl fmt::Display for Token {
 			Token::Comment(s) => write!(f, "{}", s),
 			Token::Unknown(s) => write!(f, "{}", s),
 			Token::StringNotTerminated => Ok(()),
+			Token::Eof => Ok(()),
 		}
 	}
 }
@@ -660,20 +666,21 @@ mod tests {
 	use super::*;
 
 	fn content_tokens(tokens: &[Token]) -> Vec<&Token> {
-		tokens.iter().filter(|t| !matches!(t, Token::Whitespace(_))).collect()
+		tokens.iter().filter(|t| !matches!(t, Token::Whitespace(_) | Token::Eof)).collect()
 	}
 
 	#[test]
 	fn empty_input() {
 		let tokens = lex("");
-		assert!(tokens.is_empty());
+		assert_eq!(tokens, vec![Token::Eof]);
 	}
 
 	#[test]
 	fn whitespace_only() {
 		let tokens = lex("  \n\t ");
-		assert_eq!(tokens.len(), 1);
+		assert_eq!(tokens.len(), 2);
 		assert!(matches!(&tokens[0], Token::Whitespace(s) if s == "  \n\t "));
+		assert_eq!(tokens[1], Token::Eof);
 	}
 
 	#[test]
@@ -864,6 +871,7 @@ mod tests {
 		let c: Vec<_> = content_tokens(&tokens);
 		assert_eq!(c.last(), Some(&&Token::StringNotTerminated));
 		assert!(matches!(&c[0], Token::String(s, _) if s == "never closes"));
+		assert_eq!(tokens.last(), Some(&Token::Eof));
 	}
 
 	#[test]

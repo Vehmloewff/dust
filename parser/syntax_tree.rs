@@ -1,11 +1,11 @@
-use crate::parser::Token;
+use crate::parser::{Diagnostic, Token};
 use serde::{Deserialize, Serialize};
 
-/// Reference to a token in a node's `tokens` array. Either an index into the array
+/// Reference to a token in a node's `children` array. Either an index into the array
 /// ([`Index`](ChildRef::Index)) or [`Missing`](ChildRef::Missing) when the parser
 /// recovered from an error and the token was not present (e.g. omitted or invalid).
 ///
-/// **Option vs ChildRef:** Use [`Option`]&lt;[`ChildRef`]&gt; (or `Option<SomeStruct>`) only when
+/// **Option vs ChildRef:** Use [`Option`]<[`ChildRef`]> (or `Option<SomeStruct>`) only when
 /// the element is *legally* optional in the grammar. Use plain [`ChildRef`] for required
 /// elements; [`Missing`](ChildRef::Missing) there always indicates a syntax error and
 /// error recovery.
@@ -13,10 +13,23 @@ use serde::{Deserialize, Serialize};
 #[serde(rename_all = "snake_case")]
 pub enum ChildRef {
 	Index(usize),
-	Missing,
+	Missing(Missing),
 }
 
-/// One entry in a [`Node`]'s `tokens` array.
+#[derive(Debug, Default, Serialize, Deserialize)]
+pub struct Missing {
+	pub diagnostics: Vec<Diagnostic>,
+}
+
+impl Missing {
+	pub fn with_message(message: impl Into<String>) -> Self {
+		Self {
+			diagnostics: vec![Diagnostic { message: message.into() }],
+		}
+	}
+}
+
+/// One entry in a [`Node`]'s `children` array.
 ///
 /// Normal tokens are stored as [`Token`](NodeChild::Token). Rare recovery artifacts can be
 /// preserved as [`Excess`](NodeChild::Excess) when the parser wants to keep unexpected source
@@ -26,22 +39,167 @@ pub enum ChildRef {
 #[serde(rename_all = "snake_case")]
 pub enum NodeChild {
 	Token(Token),
-	Excess(Token),
+	Excess(Excess),
 	Node(Node),
 }
 
-/// A parse node: the unit of syntax that owns its token stream and structure.
+#[derive(Debug, Serialize, Deserialize)]
+pub struct Excess {
+	pub token: Token,
+	pub diagnostics: Vec<Diagnostic>,
+}
+
+impl Excess {
+	pub fn new(token: Token) -> Self {
+		Self {
+			token,
+			diagnostics: Vec::new(),
+		}
+	}
+
+	pub fn with_message(token: Token, message: impl Into<String>) -> Self {
+		Self {
+			token,
+			diagnostics: vec![Diagnostic { message: message.into() }],
+		}
+	}
+}
+
+/// A parse node: the unit of syntax that owns its child stream and structure.
 ///
-/// **Token storage model:** Every token for this node lives in `tokens`. The fields in
-/// `structure` (and its variants like [`BlockExpr`], [`IfExpr`]) are *[`ChildRef`]s* into
-/// `tokens`—e.g. `BlockExpr::open_brace` is the `{` token in this array,
-/// not the token itself. This keeps a single source of truth for token data and lets
+/// **Child storage model:** Every token, excess token, or nested node for this node lives in
+/// `children`. The fields in `structure` (and its variants like [`BlockExpr`], [`IfExpr`]) are
+/// *[`ChildRef`]s* into `children`—e.g. `BlockExpr::open_brace` is the `{` token in this
+/// array, not the token itself. This keeps a single source of truth for child data and lets
 /// structure types stay small (just indices).
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Node {
-	pub tokens: Vec<NodeChild>,
+	pub children: Vec<NodeChild>,
 	pub structure: Structure,
 	pub content_length: usize,
+}
+
+impl Node {
+	pub fn diagnostics(&self) -> Vec<Diagnostic> {
+		let mut out = Vec::new();
+		self.collect_diagnostics_into(&mut out);
+		out
+	}
+
+	fn collect_diagnostics_into(&self, out: &mut Vec<Diagnostic>) {
+		let mut visited = vec![false; self.children.len()];
+		self.collect_structure_diagnostics(out, &mut visited);
+		for index in 0..self.children.len() {
+			if !visited[index] {
+				self.collect_child_diagnostics(index, out, &mut visited);
+			}
+		}
+	}
+
+	fn collect_structure_diagnostics(&self, out: &mut Vec<Diagnostic>, visited: &mut [bool]) {
+		match &self.structure {
+			Structure::File(file) => {
+				for item in &file.items {
+					self.collect_child_ref_diagnostics(item, out, visited);
+				}
+			}
+			Structure::FunctionDef(function) => {
+				self.collect_child_ref_diagnostics(&function.fn_keyword, out, visited);
+				self.collect_child_ref_diagnostics(&function.name, out, visited);
+				self.collect_child_ref_diagnostics(&function.open_paren, out, visited);
+				for param in &function.params {
+					self.collect_child_ref_diagnostics(&param.name, out, visited);
+					self.collect_child_ref_diagnostics(&param.colon, out, visited);
+					self.collect_child_ref_diagnostics(&param.type_ident, out, visited);
+				}
+				self.collect_child_ref_diagnostics(&function.close_paren, out, visited);
+				self.collect_child_ref_diagnostics(&function.arrow, out, visited);
+				self.collect_child_ref_diagnostics(&function.return_type, out, visited);
+				self.collect_child_ref_diagnostics(&function.block, out, visited);
+			}
+			Structure::BlockExpr(block) => {
+				self.collect_child_ref_diagnostics(&block.open_brace, out, visited);
+				for statement in &block.statements {
+					self.collect_child_ref_diagnostics(statement, out, visited);
+				}
+				if let Some(final_expression) = &block.final_expression {
+					self.collect_child_ref_diagnostics(final_expression, out, visited);
+				}
+				self.collect_child_ref_diagnostics(&block.close_brace, out, visited);
+			}
+			Structure::IfExpr(if_expr) => {
+				self.collect_child_ref_diagnostics(&if_expr.keyword, out, visited);
+				self.collect_child_ref_diagnostics(&if_expr.condition, out, visited);
+				self.collect_child_ref_diagnostics(&if_expr.block, out, visited);
+			}
+			Structure::LetStmt(let_stmt) => {
+				self.collect_child_ref_diagnostics(&let_stmt.let_keyword, out, visited);
+				self.collect_child_ref_diagnostics(&let_stmt.name, out, visited);
+				if let Some(type_annotation) = &let_stmt.type_annotation {
+					self.collect_child_ref_diagnostics(&type_annotation.colon, out, visited);
+					self.collect_child_ref_diagnostics(&type_annotation.type_, out, visited);
+				}
+				if let Some(initializer) = &let_stmt.initializer {
+					self.collect_child_ref_diagnostics(&initializer.equals, out, visited);
+					self.collect_child_ref_diagnostics(&initializer.expr, out, visited);
+				}
+				self.collect_child_ref_diagnostics(&let_stmt.semi, out, visited);
+			}
+			Structure::ReturnStmt(return_stmt) => {
+				self.collect_child_ref_diagnostics(&return_stmt.return_keyword, out, visited);
+				self.collect_child_ref_diagnostics(&return_stmt.expr, out, visited);
+				self.collect_child_ref_diagnostics(&return_stmt.semi, out, visited);
+			}
+			Structure::ExprStmt(expr_stmt) => {
+				self.collect_child_ref_diagnostics(&expr_stmt.expr, out, visited);
+				self.collect_child_ref_diagnostics(&expr_stmt.semi, out, visited);
+			}
+			Structure::BinaryExpr(binary) => {
+				self.collect_child_ref_diagnostics(&binary.left, out, visited);
+				self.collect_child_ref_diagnostics(&binary.op, out, visited);
+				self.collect_child_ref_diagnostics(&binary.right, out, visited);
+			}
+			Structure::CallExpr(call) => {
+				self.collect_child_ref_diagnostics(&call.callee, out, visited);
+				self.collect_child_ref_diagnostics(&call.open_paren, out, visited);
+				for arg in &call.args {
+					self.collect_child_ref_diagnostics(arg, out, visited);
+				}
+				self.collect_child_ref_diagnostics(&call.close_paren, out, visited);
+			}
+			Structure::NumberLit(number) | Structure::StringLit(number) | Structure::Ident(number) => {
+				self.collect_child_ref_diagnostics(number, out, visited);
+			}
+			Structure::ParenExpr(paren) => {
+				self.collect_child_ref_diagnostics(&paren.open_paren, out, visited);
+				self.collect_child_ref_diagnostics(&paren.expr, out, visited);
+				self.collect_child_ref_diagnostics(&paren.close_paren, out, visited);
+			}
+			Structure::UnaryExpr(unary) => {
+				self.collect_child_ref_diagnostics(&unary.op, out, visited);
+				self.collect_child_ref_diagnostics(&unary.operand, out, visited);
+			}
+		}
+	}
+
+	fn collect_child_ref_diagnostics(&self, child_ref: &ChildRef, out: &mut Vec<Diagnostic>, visited: &mut [bool]) {
+		match child_ref {
+			ChildRef::Index(index) => self.collect_child_diagnostics(*index, out, visited),
+			ChildRef::Missing(missing) => out.extend(missing.diagnostics.iter().cloned()),
+		}
+	}
+
+	fn collect_child_diagnostics(&self, index: usize, out: &mut Vec<Diagnostic>, visited: &mut [bool]) {
+		if visited[index] {
+			return;
+		}
+		visited[index] = true;
+		match &self.children[index] {
+			NodeChild::Token(_) => {}
+			NodeChild::Excess(excess) => out.extend(excess.diagnostics.iter().cloned()),
+			NodeChild::Node(node) => node.collect_diagnostics_into(out),
+		}
+	}
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -147,16 +305,14 @@ impl From<UnaryExpr> for Structure {
 // Top-level and items
 // ---------------------------------------------------------------------------
 
-/// File structure: all fields are indexes into the parent [`Node`]'s `tokens` array.
-/// Each entry in `item_starts` is the index of the first token of a top-level item
-/// (e.g. the `fn` token of a function definition).
+/// File structure: each item is a child node ref in the parent [`Node`]'s `children` array.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct FileStructure {
 	pub items: Vec<ChildRef>,
 }
 
-/// Function definition structure: all fields are indexes into the parent [`Node`]'s
-/// `tokens` array; `block` is a nested structure whose fields also index the same array.
+/// Function definition structure: token fields index the parent [`Node`]'s `children` array;
+/// `block` is a child node ref to a nested [`Structure::BlockExpr`] node.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct FunctionDef {
 	pub fn_keyword: ChildRef,
@@ -166,10 +322,10 @@ pub struct FunctionDef {
 	pub close_paren: ChildRef,
 	pub arrow: ChildRef,
 	pub return_type: ChildRef,
-	pub block: BlockExpr,
+	pub block: ChildRef,
 }
 
-/// Single parameter: `name: type`. Indexes into the parent node's `tokens` array.
+/// Single parameter: `name: type`. Indexes into the parent node's `children` array.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Param {
 	pub name: ChildRef,
@@ -181,9 +337,8 @@ pub struct Param {
 // Blocks and statements
 // ---------------------------------------------------------------------------
 
-/// Block structure: all fields are indexes into the parent [`Node`]'s `tokens` array.
-/// Each entry in `statements` is the index of the first token of that statement
-/// (e.g. `let`, `return`, or the start of an expression).
+/// Block structure: delimiter fields index the parent [`Node`]'s `children` array.
+/// `statements` and `final_expression` refer to child statement/expression nodes.
 /// `final_expression` is [`Option`] because a block may legally end with statements only.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct BlockExpr {
@@ -193,14 +348,14 @@ pub struct BlockExpr {
 	pub close_brace: ChildRef,
 }
 
-/// If-expression structure: all token/expr fields are indexes into the parent [`Node`]'s
-/// `tokens` array; `block` is a nested structure whose fields also index the same array.
+/// If-expression structure: token fields index the parent [`Node`]'s `children` array.
+/// `condition` and `block` refer to child nodes.
 /// The condition is an expression (parentheses around it are optional in the grammar).
 #[derive(Debug, Serialize, Deserialize)]
 pub struct IfExpr {
 	pub keyword: ChildRef,
 	pub condition: ChildRef,
-	pub block: BlockExpr,
+	pub block: ChildRef,
 }
 
 /// Optional type annotation on a let binding: `: type`. When present, both `colon` and
@@ -212,7 +367,7 @@ pub struct LetType {
 }
 
 /// Optional initializer on a let binding: `= expr`. When present, both `equals` and
-/// `expr_start` are required. When omitted (e.g. `let name: string;`), the binding is
+/// `expr` are required. When omitted (e.g. `let name: string;`), the binding is
 /// taken to have the zero value for the type; the type must be supplied in that case.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct LetValue {
@@ -220,11 +375,11 @@ pub struct LetValue {
 	pub expr: ChildRef,
 }
 
-/// Let statement structure: all fields are indexes into the parent [`Node`]'s `tokens` array.
+/// Let statement structure: all fields are indexes into the parent [`Node`]'s `children` array.
 /// The type annotation is [`Option`] because `let name = expr;` is valid without a type;
-/// when present, the whole `: type` is required (use [`Option`]&lt;[`LetType`]&gt;).
+/// when present, the whole `: type` is required (use [`Option`]<[`LetType`]>).
 /// The initializer is [`Option`] because `let name: type;` is valid without a value (zero
-/// value); when present, the whole `= expr` is required (use [`Option`]&lt;[`LetValue`]&gt;).
+/// value); when present, the whole `= expr` is required (use [`Option`]<[`LetValue`]>).
 /// At least one of type or initializer must be supplied.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct LetStmt {
@@ -235,8 +390,8 @@ pub struct LetStmt {
 	pub semi: ChildRef,
 }
 
-/// Return statement structure: all fields are indexes into the parent [`Node`]'s `tokens` array.
-/// The returned expression spans from `expr_start` through the token immediately before `semi`.
+/// Return statement structure: token fields index the parent [`Node`]'s `children` array.
+/// `expr` refers to a child expression node.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ReturnStmt {
 	pub return_keyword: ChildRef,
@@ -244,8 +399,8 @@ pub struct ReturnStmt {
 	pub semi: ChildRef,
 }
 
-/// Expression statement structure: indexes into the parent [`Node`]'s `tokens` array.
-/// The expression spans from `expr_start` through the token immediately before `semi`.
+/// Expression statement structure: `semi` indexes the parent [`Node`]'s `children` array.
+/// `expr` refers to a child expression node.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ExprStmt {
 	pub expr: ChildRef,
@@ -256,8 +411,8 @@ pub struct ExprStmt {
 // Expressions
 // ---------------------------------------------------------------------------
 
-/// Binary expression: left op right. All fields index the parent [`Node`]'s `tokens` array.
-/// `left` and `right` are the first token of each operand (operands may span multiple tokens).
+/// Binary expression: left op right. `op` indexes the parent [`Node`]'s `children` array.
+/// `left` and `right` refer to child expression nodes.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct BinaryExpr {
 	pub left: ChildRef,
@@ -265,8 +420,8 @@ pub struct BinaryExpr {
 	pub right: ChildRef,
 }
 
-/// Call expression: callee(args). All fields index the parent [`Node`]'s `tokens` array.
-/// `args` holds the start index of each argument expression (comma-separated).
+/// Call expression: callee(args). Delimiter fields index the parent [`Node`]'s `children` array.
+/// `callee` and `args` refer to child expression nodes.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct CallExpr {
 	pub callee: ChildRef,
@@ -275,7 +430,8 @@ pub struct CallExpr {
 	pub close_paren: ChildRef,
 }
 
-/// Parenthesized expression: ( expr ). Indexes into the parent [`Node`]'s `tokens` array.
+/// Parenthesized expression: ( expr ). Delimiters index the parent [`Node`]'s `children` array;
+/// `expr` refers to a child expression node.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ParenExpr {
 	pub open_paren: ChildRef,
@@ -283,7 +439,8 @@ pub struct ParenExpr {
 	pub close_paren: ChildRef,
 }
 
-/// Unary expression: op operand. Indexes into the parent [`Node`]'s `tokens` array.
+/// Unary expression: `op` indexes the parent [`Node`]'s `children` array;
+/// `operand` refers to a child expression node.
 #[derive(Debug, Serialize, Deserialize)]
 pub struct UnaryExpr {
 	pub op: ChildRef,

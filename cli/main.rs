@@ -165,6 +165,7 @@ fn highlight(code: &str) {
 			Token::StringNotTerminated => {
 				spec.set_fg(Some(error()));
 			}
+			Token::Eof => {}
 		}
 		let _ = stdout.set_color(&spec);
 		let _ = write!(&mut stdout, "{}", token);

@@ -3,17 +3,27 @@ use super::stack::Stack;
 use crate::parser::Token;
 use crate::parser::TokenKind;
 use crate::parser::lexer::Mode;
-use crate::parser::syntax_tree::{BlockExpr, ChildRef, LetType, LetValue};
+use crate::parser::syntax_tree::{BlockExpr, ChildRef, ExprStmt, LetStmt, LetType, LetValue, ReturnStmt};
 
-/// Parse block `{ ... }`. Pushes all tokens to current buffer. Returns BlockExpr with refs into current buffer.
-pub fn parse_block(stack: &mut Stack) -> BlockExpr {
+pub fn parse_block_node(stack: &mut Stack) -> ChildRef {
+	let scope = stack.start_node();
+	let block = parse_block_inner(stack);
+	stack.finish_node(scope, block)
+}
+
+pub(crate) fn parse_block_detached(stack: &mut Stack) -> crate::parser::Node {
+	let scope = stack.start_node();
+	let block = parse_block_inner(stack);
+	stack.finish_node_detached(scope, block)
+}
+
+fn parse_block_inner(stack: &mut Stack) -> BlockExpr {
 	let open_brace = stack.expect(&Token::Brace(Mode::Open), "expected '{'");
 	let mut statements = Vec::new();
 	let mut final_expression = None;
 
 	loop {
 		if stack.is_at_end() {
-			stack.error("unclosed block");
 			break;
 		}
 		match stack.peek() {
@@ -27,30 +37,30 @@ pub fn parse_block(stack: &mut Stack) -> BlockExpr {
 				let _ = stack.advance();
 			}
 			_ => {
-				if let Some(expr) = expressions::parse_expression(stack) {
+				if let Some(expr) = expressions::parse_expression_detached(stack) {
 					match stack.peek() {
-						Some(Token::Semi) => {
-							let _ = stack.advance();
-							statements.push(expr);
-						}
+						Some(Token::Semi) => statements.push(parse_expr_stmt_node(stack, expr)),
 						Some(Token::Brace(Mode::Close)) => {
-							final_expression = Some(expr);
+							final_expression = Some(stack.push_node(expr));
 							break;
 						}
 						_ => {
-							stack.error("expected ';' or '}'");
-							statements.push(expr);
-							stack.skip_until(&[TokenKind::Semi, TokenKind::CloseBrace]);
+							statements.push(stack.push_node(expr));
+							stack.skip_until(&[TokenKind::Semi, TokenKind::CloseBrace], Some("expected ';' or '}'"));
 						}
 					}
 				} else {
-					stack.skip_until(&[TokenKind::Semi, TokenKind::CloseBrace, TokenKind::Let, TokenKind::Return]);
+					stack.skip_until(&[TokenKind::Semi, TokenKind::CloseBrace, TokenKind::Let, TokenKind::Return], None);
 				}
 			}
 		}
 	}
 
-	let close_brace = stack.expect(&Token::Brace(Mode::Close), "expected '}'");
+	let close_brace = if stack.is_at_end() {
+		stack.missing("Unterminated block. Expected '}'")
+	} else {
+		stack.expect(&Token::Brace(Mode::Close), "expected '}'")
+	};
 	BlockExpr {
 		open_brace,
 		statements,
@@ -60,26 +70,35 @@ pub fn parse_block(stack: &mut Stack) -> BlockExpr {
 }
 
 fn parse_statement(stack: &mut Stack) -> Option<ChildRef> {
-	let start = stack.mark();
 	match stack.peek() {
-		Some(Token::Let) => {
-			parse_let_stmt(stack);
-			Some(stack.child(start))
-		}
-		Some(Token::Return) => {
-			parse_return_stmt(stack);
-			Some(stack.child(start))
-		}
+		Some(Token::Let) => parse_let_stmt_node(stack),
+		Some(Token::Return) => parse_return_stmt_node(stack),
 		_ => None,
 	}
 }
 
-fn parse_let_stmt(stack: &mut Stack) {
-	let _let_kw = stack.advance();
-	let _name = stack.expect_where(|t| matches!(t, Token::Ident(_)), "expected variable name after 'let'");
-	let _type_annotation = parse_optional_let_type(stack);
-	let _initializer = parse_optional_let_value(stack);
-	let _semi = stack.expect(&Token::Semi, "expected ';' after let");
+fn parse_let_stmt_node(stack: &mut Stack) -> Option<ChildRef> {
+	if !matches!(stack.peek(), Some(Token::Let)) {
+		return None;
+	}
+
+	let scope = stack.start_node();
+	let let_keyword = stack.advance();
+	let name = stack.expect_where(|t| matches!(t, Token::Ident(_)), "expected variable name after 'let'");
+	let type_annotation = parse_optional_let_type(stack);
+	let initializer = parse_optional_let_value(stack);
+	let semi = stack.expect(&Token::Semi, "expected ';' after let");
+
+	Some(stack.finish_node(
+		scope,
+		LetStmt {
+			let_keyword,
+			name,
+			type_annotation,
+			initializer,
+			semi,
+		},
+	))
 }
 
 fn parse_optional_let_type(stack: &mut Stack) -> Option<LetType> {
@@ -99,10 +118,7 @@ fn parse_optional_let_value(stack: &mut Stack) -> Option<LetValue> {
 			let equals = stack.advance();
 			let expr = match stack.subparse(&[TokenKind::Semi, TokenKind::CloseBrace], expressions::parse_expression) {
 				Some(expr) => expr,
-				None => {
-					stack.error("expected expression after '='");
-					ChildRef::Missing
-				}
+				None => stack.missing("expected expression after '='"),
 			};
 			Some(LetValue { equals, expr })
 		}
@@ -110,14 +126,32 @@ fn parse_optional_let_value(stack: &mut Stack) -> Option<LetValue> {
 	}
 }
 
-fn parse_return_stmt(stack: &mut Stack) {
-	let _return_kw = stack.advance();
-	let _expr = match stack.subparse(&[TokenKind::Semi, TokenKind::CloseBrace], expressions::parse_expression) {
+fn parse_return_stmt_node(stack: &mut Stack) -> Option<ChildRef> {
+	if !matches!(stack.peek(), Some(Token::Return)) {
+		return None;
+	}
+
+	let scope = stack.start_node();
+	let return_keyword = stack.advance();
+	let expr = match stack.subparse(&[TokenKind::Semi, TokenKind::CloseBrace], expressions::parse_expression) {
 		Some(expr) => expr,
-		None => {
-			stack.error("expected expression after 'return'");
-			ChildRef::Missing
-		}
+		None => stack.missing("expected expression after 'return'"),
 	};
-	let _semi = stack.expect(&Token::Semi, "expected ';' after return");
+	let semi = stack.expect(&Token::Semi, "expected ';' after return");
+
+	Some(stack.finish_node(
+		scope,
+		ReturnStmt {
+			return_keyword,
+			expr,
+			semi,
+		},
+	))
+}
+
+fn parse_expr_stmt_node(stack: &mut Stack, expr: crate::parser::Node) -> ChildRef {
+	let scope = stack.start_node();
+	let expr = stack.push_node(expr);
+	let semi = stack.expect(&Token::Semi, "expected ';' after expression");
+	stack.finish_node(scope, ExprStmt { expr, semi })
 }

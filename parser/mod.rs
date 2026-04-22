@@ -19,7 +19,7 @@ pub use crate::parser::token_stream::TokenStream;
 use serde::{Deserialize, Serialize};
 use stack::Stack;
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Diagnostic {
 	pub message: String,
 }
@@ -28,7 +28,7 @@ pub struct Diagnostic {
 pub fn parse_file(stream: TokenStream) -> (Node, Vec<Diagnostic>) {
 	let mut stack = Stack::new(stream);
 	let node = items::parse_file(&mut stack);
-	let diags = stack.finish();
+	let diags = node.diagnostics();
 	(node, diags)
 }
 
