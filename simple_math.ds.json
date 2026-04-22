@@ -1,0 +1,7845 @@
+{
+  "tokens": [
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Comment": "// A simple program that does some basic math and such."
+        }
+      ]
+    },
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Whitespace": "\n\n"
+        }
+      ]
+    },
+    {
+      "Node": {
+        "tokens": [
+          {
+            "Token": [
+              "Semantic",
+              "Fn"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "main"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "celsius"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Equals"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 25.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Equals"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "celsius_to_fahrenheit"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "celsius"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "print"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "String": [
+                  "",
+                  "LeftQuoted"
+                ]
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "principal"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Equals"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 10000.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "rate"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Equals"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 0.05
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "years"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Equals"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 3.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "monthly"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Equals"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "loan_payment_monthly"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "principal"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Comma"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "rate"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Comma"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "years"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "print"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "String": [
+                  "Loan payment: ",
+                  "LeftQuoted"
+                ]
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Equals"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 10.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "fib_n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Equals"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "fibonacci"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "print"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "String": [
+                  "fibonacci(",
+                  "LeftQuoted"
+                ]
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "a"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Equals"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 48.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "b"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Equals"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 18.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "g"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Equals"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "gcd"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "a"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Comma"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "b"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "print"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "String": [
+                  "gcd(",
+                  "LeftQuoted"
+                ]
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "x"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Equals"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 5.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "fact_x"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Equals"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "factorial"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "x"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "print"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "String": [
+                  "factorial(",
+                  "LeftQuoted"
+                ]
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "base"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Equals"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 2.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "exp"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Equals"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 10.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "p"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Equals"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "int_power"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "base"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Comma"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "exp"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "print"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "String": [
+                  "",
+                  "LeftQuoted"
+                ]
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "name"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "string"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          }
+        ],
+        "structure": {
+          "FunctionDef": {
+            "fn_keyword": {
+              "Index": 0
+            },
+            "name": {
+              "Index": 2
+            },
+            "open_paren": {
+              "Index": 3
+            },
+            "params": [],
+            "close_paren": {
+              "Index": 4
+            },
+            "arrow": "Missing",
+            "return_type": "Missing",
+            "block": {
+              "open_brace": {
+                "Index": 6
+              },
+              "statements": [
+                {
+                  "Index": 8
+                },
+                {
+                  "Index": 20
+                },
+                {
+                  "Index": 32
+                },
+                {
+                  "Index": 38
+                },
+                {
+                  "Index": 47
+                },
+                {
+                  "Index": 56
+                },
+                {
+                  "Index": 65
+                },
+                {
+                  "Index": 83
+                },
+                {
+                  "Index": 89
+                },
+                {
+                  "Index": 98
+                },
+                {
+                  "Index": 110
+                },
+                {
+                  "Index": 116
+                },
+                {
+                  "Index": 125
+                },
+                {
+                  "Index": 134
+                },
+                {
+                  "Index": 149
+                },
+                {
+                  "Index": 155
+                },
+                {
+                  "Index": 164
+                },
+                {
+                  "Index": 176
+                },
+                {
+                  "Index": 182
+                },
+                {
+                  "Index": 191
+                },
+                {
+                  "Index": 200
+                },
+                {
+                  "Index": 215
+                },
+                {
+                  "Index": 221
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "Index": 229
+              }
+            }
+          }
+        },
+        "content_length": 230
+      }
+    },
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Whitespace": "\n\n"
+        }
+      ]
+    },
+    {
+      "Node": {
+        "tokens": [
+          {
+            "Token": [
+              "Semantic",
+              "Fn"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "celsius_to_fahrenheit"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "c"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Arrow"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Return"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "c"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Mul"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 9.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Div"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 5.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Add"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 32.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          }
+        ],
+        "structure": {
+          "FunctionDef": {
+            "fn_keyword": {
+              "Index": 0
+            },
+            "name": {
+              "Index": 2
+            },
+            "open_paren": {
+              "Index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "Index": 4
+                },
+                "colon": {
+                  "Index": 5
+                },
+                "type_ident": {
+                  "Index": 7
+                }
+              }
+            ],
+            "close_paren": {
+              "Index": 8
+            },
+            "arrow": {
+              "Index": 10
+            },
+            "return_type": {
+              "Index": 12
+            },
+            "block": {
+              "open_brace": {
+                "Index": 14
+              },
+              "statements": [
+                {
+                  "Index": 16
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "Index": 33
+              }
+            }
+          }
+        },
+        "content_length": 34
+      }
+    },
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Whitespace": "\n\n"
+        }
+      ]
+    },
+    {
+      "Node": {
+        "tokens": [
+          {
+            "Token": [
+              "Semantic",
+              "Fn"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "fahrenheit_to_celsius"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Arrow"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Return"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Sub"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 32.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Mul"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 5.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Div"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 9.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          }
+        ],
+        "structure": {
+          "FunctionDef": {
+            "fn_keyword": {
+              "Index": 0
+            },
+            "name": {
+              "Index": 2
+            },
+            "open_paren": {
+              "Index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "Index": 4
+                },
+                "colon": {
+                  "Index": 5
+                },
+                "type_ident": {
+                  "Index": 7
+                }
+              }
+            ],
+            "close_paren": {
+              "Index": 8
+            },
+            "arrow": {
+              "Index": 10
+            },
+            "return_type": {
+              "Index": 12
+            },
+            "block": {
+              "open_brace": {
+                "Index": 14
+              },
+              "statements": [
+                {
+                  "Index": 16
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "Index": 35
+              }
+            }
+          }
+        },
+        "content_length": 36
+      }
+    },
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Whitespace": "\n\n"
+        }
+      ]
+    },
+    {
+      "Node": {
+        "tokens": [
+          {
+            "Token": [
+              "Semantic",
+              "Fn"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "loan_payment_monthly"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "principal"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Comma"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "annual_rate"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Comma"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "years"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "i32"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Arrow"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Equals"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "years"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Mul"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 12.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "r"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Equals"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "annual_rate"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Div"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 12.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "factor"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Equals"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "int_power"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 1.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Add"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "r"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Comma"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Return"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "principal"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Mul"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "r"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Mul"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "factor"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Div"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "factor"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Sub"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 1.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          }
+        ],
+        "structure": {
+          "FunctionDef": {
+            "fn_keyword": {
+              "Index": 0
+            },
+            "name": {
+              "Index": 2
+            },
+            "open_paren": {
+              "Index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "Index": 4
+                },
+                "colon": {
+                  "Index": 5
+                },
+                "type_ident": {
+                  "Index": 7
+                }
+              },
+              {
+                "name": {
+                  "Index": 10
+                },
+                "colon": {
+                  "Index": 11
+                },
+                "type_ident": {
+                  "Index": 13
+                }
+              },
+              {
+                "name": {
+                  "Index": 16
+                },
+                "colon": {
+                  "Index": 17
+                },
+                "type_ident": {
+                  "Index": 19
+                }
+              }
+            ],
+            "close_paren": {
+              "Index": 20
+            },
+            "arrow": {
+              "Index": 22
+            },
+            "return_type": {
+              "Index": 24
+            },
+            "block": {
+              "open_brace": {
+                "Index": 26
+              },
+              "statements": [
+                {
+                  "Index": 28
+                },
+                {
+                  "Index": 41
+                },
+                {
+                  "Index": 54
+                },
+                {
+                  "Index": 73
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "Index": 96
+              }
+            }
+          }
+        },
+        "content_length": 97
+      }
+    },
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Whitespace": "\n\n"
+        }
+      ]
+    },
+    {
+      "Node": {
+        "tokens": [
+          {
+            "Token": [
+              "Semantic",
+              "Fn"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "fibonacci"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "i32"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Arrow"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "i32"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "If"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Comparison": "LessThanOrEqual"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 0.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Return"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 0.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          }
+        ],
+        "structure": {
+          "FunctionDef": {
+            "fn_keyword": {
+              "Index": 0
+            },
+            "name": {
+              "Index": 2
+            },
+            "open_paren": {
+              "Index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "Index": 4
+                },
+                "colon": {
+                  "Index": 5
+                },
+                "type_ident": {
+                  "Index": 7
+                }
+              }
+            ],
+            "close_paren": {
+              "Index": 8
+            },
+            "arrow": {
+              "Index": 10
+            },
+            "return_type": {
+              "Index": 12
+            },
+            "block": {
+              "open_brace": {
+                "Index": 14
+              },
+              "statements": [
+                {
+                  "Index": 16
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "Index": 35
+              }
+            }
+          }
+        },
+        "content_length": 36
+      }
+    },
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Whitespace": "\n\t"
+        }
+      ]
+    },
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Whitespace": "\n"
+        }
+      ]
+    },
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Whitespace": "\n\n"
+        }
+      ]
+    },
+    {
+      "Node": {
+        "tokens": [
+          {
+            "Token": [
+              "Semantic",
+              "Fn"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "gcd"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "a"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "i32"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Comma"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "b"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "i32"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Arrow"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "i32"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "If"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "b"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Comparison": "Equality"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 0.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Return"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "a"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          }
+        ],
+        "structure": {
+          "FunctionDef": {
+            "fn_keyword": {
+              "Index": 0
+            },
+            "name": {
+              "Index": 2
+            },
+            "open_paren": {
+              "Index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "Index": 4
+                },
+                "colon": {
+                  "Index": 5
+                },
+                "type_ident": {
+                  "Index": 7
+                }
+              },
+              {
+                "name": {
+                  "Index": 10
+                },
+                "colon": {
+                  "Index": 11
+                },
+                "type_ident": {
+                  "Index": 13
+                }
+              }
+            ],
+            "close_paren": {
+              "Index": 14
+            },
+            "arrow": {
+              "Index": 16
+            },
+            "return_type": {
+              "Index": 18
+            },
+            "block": {
+              "open_brace": {
+                "Index": 20
+              },
+              "statements": [
+                {
+                  "Index": 22
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "Index": 41
+              }
+            }
+          }
+        },
+        "content_length": 42
+      }
+    },
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Whitespace": "\n\n"
+        }
+      ]
+    },
+    {
+      "Node": {
+        "tokens": [
+          {
+            "Token": [
+              "Semantic",
+              "Fn"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "factorial"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "i32"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Arrow"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "i32"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "If"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Comparison": "LessThanOrEqual"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 1.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Return"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 1.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          }
+        ],
+        "structure": {
+          "FunctionDef": {
+            "fn_keyword": {
+              "Index": 0
+            },
+            "name": {
+              "Index": 2
+            },
+            "open_paren": {
+              "Index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "Index": 4
+                },
+                "colon": {
+                  "Index": 5
+                },
+                "type_ident": {
+                  "Index": 7
+                }
+              }
+            ],
+            "close_paren": {
+              "Index": 8
+            },
+            "arrow": {
+              "Index": 10
+            },
+            "return_type": {
+              "Index": 12
+            },
+            "block": {
+              "open_brace": {
+                "Index": 14
+              },
+              "statements": [
+                {
+                  "Index": 16
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "Index": 35
+              }
+            }
+          }
+        },
+        "content_length": 36
+      }
+    },
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Whitespace": "\n\n"
+        }
+      ]
+    },
+    {
+      "Node": {
+        "tokens": [
+          {
+            "Token": [
+              "Semantic",
+              "Fn"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "int_power"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "base"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Comma"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "exp"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "i32"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Arrow"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "If"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "exp"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Comparison": "Equality"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 0.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Return"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 1.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Let"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "sq"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Equals"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "half"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Mul"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "half"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "If"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "exp"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Mod"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 2.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Comparison": "Equality"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 1.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Return"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "base"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Mul"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "sq"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          }
+        ],
+        "structure": {
+          "FunctionDef": {
+            "fn_keyword": {
+              "Index": 0
+            },
+            "name": {
+              "Index": 2
+            },
+            "open_paren": {
+              "Index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "Index": 4
+                },
+                "colon": {
+                  "Index": 5
+                },
+                "type_ident": {
+                  "Index": 7
+                }
+              },
+              {
+                "name": {
+                  "Index": 10
+                },
+                "colon": {
+                  "Index": 11
+                },
+                "type_ident": {
+                  "Index": 13
+                }
+              }
+            ],
+            "close_paren": {
+              "Index": 14
+            },
+            "arrow": {
+              "Index": 16
+            },
+            "return_type": {
+              "Index": 18
+            },
+            "block": {
+              "open_brace": {
+                "Index": 20
+              },
+              "statements": [
+                {
+                  "Index": 22
+                },
+                {
+                  "Index": 41
+                },
+                {
+                  "Index": 54
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "Index": 81
+              }
+            }
+          }
+        },
+        "content_length": 82
+      }
+    },
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Whitespace": "\n\n"
+        }
+      ]
+    },
+    {
+      "Node": {
+        "tokens": [
+          {
+            "Token": [
+              "Semantic",
+              "Fn"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "min_two"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "a"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Comma"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "b"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Arrow"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "If"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "a"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Comparison": "LessThan"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "b"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Return"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "a"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          }
+        ],
+        "structure": {
+          "FunctionDef": {
+            "fn_keyword": {
+              "Index": 0
+            },
+            "name": {
+              "Index": 2
+            },
+            "open_paren": {
+              "Index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "Index": 4
+                },
+                "colon": {
+                  "Index": 5
+                },
+                "type_ident": {
+                  "Index": 7
+                }
+              },
+              {
+                "name": {
+                  "Index": 10
+                },
+                "colon": {
+                  "Index": 11
+                },
+                "type_ident": {
+                  "Index": 13
+                }
+              }
+            ],
+            "close_paren": {
+              "Index": 14
+            },
+            "arrow": {
+              "Index": 16
+            },
+            "return_type": {
+              "Index": 18
+            },
+            "block": {
+              "open_brace": {
+                "Index": 20
+              },
+              "statements": [
+                {
+                  "Index": 22
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "Index": 41
+              }
+            }
+          }
+        },
+        "content_length": 42
+      }
+    },
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Whitespace": "\n\n"
+        }
+      ]
+    },
+    {
+      "Node": {
+        "tokens": [
+          {
+            "Token": [
+              "Semantic",
+              "Fn"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "max_two"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "a"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Comma"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "b"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Arrow"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "If"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "a"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Comparison": "GreaterThan"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "b"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Return"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "a"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          }
+        ],
+        "structure": {
+          "FunctionDef": {
+            "fn_keyword": {
+              "Index": 0
+            },
+            "name": {
+              "Index": 2
+            },
+            "open_paren": {
+              "Index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "Index": 4
+                },
+                "colon": {
+                  "Index": 5
+                },
+                "type_ident": {
+                  "Index": 7
+                }
+              },
+              {
+                "name": {
+                  "Index": 10
+                },
+                "colon": {
+                  "Index": 11
+                },
+                "type_ident": {
+                  "Index": 13
+                }
+              }
+            ],
+            "close_paren": {
+              "Index": 14
+            },
+            "arrow": {
+              "Index": 16
+            },
+            "return_type": {
+              "Index": 18
+            },
+            "block": {
+              "open_brace": {
+                "Index": 20
+              },
+              "statements": [
+                {
+                  "Index": 22
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "Index": 41
+              }
+            }
+          }
+        },
+        "content_length": 42
+      }
+    },
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Whitespace": "\n\n"
+        }
+      ]
+    },
+    {
+      "Node": {
+        "tokens": [
+          {
+            "Token": [
+              "Semantic",
+              "Fn"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "clamp"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "low"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Comma"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "x"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Comma"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "high"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Arrow"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "If"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "x"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Comparison": "LessThan"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "low"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Return"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "low"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          }
+        ],
+        "structure": {
+          "FunctionDef": {
+            "fn_keyword": {
+              "Index": 0
+            },
+            "name": {
+              "Index": 2
+            },
+            "open_paren": {
+              "Index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "Index": 4
+                },
+                "colon": {
+                  "Index": 5
+                },
+                "type_ident": {
+                  "Index": 7
+                }
+              },
+              {
+                "name": {
+                  "Index": 10
+                },
+                "colon": {
+                  "Index": 11
+                },
+                "type_ident": {
+                  "Index": 13
+                }
+              },
+              {
+                "name": {
+                  "Index": 16
+                },
+                "colon": {
+                  "Index": 17
+                },
+                "type_ident": {
+                  "Index": 19
+                }
+              }
+            ],
+            "close_paren": {
+              "Index": 20
+            },
+            "arrow": {
+              "Index": 22
+            },
+            "return_type": {
+              "Index": 24
+            },
+            "block": {
+              "open_brace": {
+                "Index": 26
+              },
+              "statements": [
+                {
+                  "Index": 28
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "Index": 47
+              }
+            }
+          }
+        },
+        "content_length": 48
+      }
+    },
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Whitespace": "\n\t"
+        }
+      ]
+    },
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Whitespace": "\n"
+        }
+      ]
+    },
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Whitespace": "\n\n"
+        }
+      ]
+    },
+    {
+      "Node": {
+        "tokens": [
+          {
+            "Token": [
+              "Semantic",
+              "Fn"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "abs_val"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "x"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Arrow"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "If"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "x"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Comparison": "LessThan"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 0.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Return"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Sub"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "x"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          }
+        ],
+        "structure": {
+          "FunctionDef": {
+            "fn_keyword": {
+              "Index": 0
+            },
+            "name": {
+              "Index": 2
+            },
+            "open_paren": {
+              "Index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "Index": 4
+                },
+                "colon": {
+                  "Index": 5
+                },
+                "type_ident": {
+                  "Index": 7
+                }
+              }
+            ],
+            "close_paren": {
+              "Index": 8
+            },
+            "arrow": {
+              "Index": 10
+            },
+            "return_type": {
+              "Index": 12
+            },
+            "block": {
+              "open_brace": {
+                "Index": 14
+              },
+              "statements": [
+                {
+                  "Index": 16
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "Index": 36
+              }
+            }
+          }
+        },
+        "content_length": 37
+      }
+    },
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Whitespace": "\n\n"
+        }
+      ]
+    },
+    {
+      "Node": {
+        "tokens": [
+          {
+            "Token": [
+              "Semantic",
+              "Fn"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "is_even"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "i32"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Arrow"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "bool"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Return"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Mod"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 2.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Comparison": "Equality"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 0.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          }
+        ],
+        "structure": {
+          "FunctionDef": {
+            "fn_keyword": {
+              "Index": 0
+            },
+            "name": {
+              "Index": 2
+            },
+            "open_paren": {
+              "Index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "Index": 4
+                },
+                "colon": {
+                  "Index": 5
+                },
+                "type_ident": {
+                  "Index": 7
+                }
+              }
+            ],
+            "close_paren": {
+              "Index": 8
+            },
+            "arrow": {
+              "Index": 10
+            },
+            "return_type": {
+              "Index": 12
+            },
+            "block": {
+              "open_brace": {
+                "Index": 14
+              },
+              "statements": [
+                {
+                  "Index": 16
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "Index": 29
+              }
+            }
+          }
+        },
+        "content_length": 30
+      }
+    },
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Whitespace": "\n\n"
+        }
+      ]
+    },
+    {
+      "Node": {
+        "tokens": [
+          {
+            "Token": [
+              "Semantic",
+              "Fn"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "circle_area"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "radius"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Arrow"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Return"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 3.14159265359
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Mul"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "radius"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Mul"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "radius"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          }
+        ],
+        "structure": {
+          "FunctionDef": {
+            "fn_keyword": {
+              "Index": 0
+            },
+            "name": {
+              "Index": 2
+            },
+            "open_paren": {
+              "Index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "Index": 4
+                },
+                "colon": {
+                  "Index": 5
+                },
+                "type_ident": {
+                  "Index": 7
+                }
+              }
+            ],
+            "close_paren": {
+              "Index": 8
+            },
+            "arrow": {
+              "Index": 10
+            },
+            "return_type": {
+              "Index": 12
+            },
+            "block": {
+              "open_brace": {
+                "Index": 14
+              },
+              "statements": [
+                {
+                  "Index": 16
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "Index": 29
+              }
+            }
+          }
+        },
+        "content_length": 30
+      }
+    },
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Whitespace": "\n\n"
+        }
+      ]
+    },
+    {
+      "Node": {
+        "tokens": [
+          {
+            "Token": [
+              "Semantic",
+              "Fn"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "average_three"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "a"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Comma"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "b"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Comma"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "c"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Colon"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Arrow"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "f64"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n\t"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Return"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Open"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "a"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Add"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "b"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Add"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Ident": "c"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Paren": "Close"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Operator": "Div"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": " "
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Number": 3.0
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              "Semi"
+            ]
+          },
+          {
+            "Token": [
+              "Trivia",
+              {
+                "Whitespace": "\n"
+              }
+            ]
+          },
+          {
+            "Token": [
+              "Semantic",
+              {
+                "Brace": "Close"
+              }
+            ]
+          }
+        ],
+        "structure": {
+          "FunctionDef": {
+            "fn_keyword": {
+              "Index": 0
+            },
+            "name": {
+              "Index": 2
+            },
+            "open_paren": {
+              "Index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "Index": 4
+                },
+                "colon": {
+                  "Index": 5
+                },
+                "type_ident": {
+                  "Index": 7
+                }
+              },
+              {
+                "name": {
+                  "Index": 10
+                },
+                "colon": {
+                  "Index": 11
+                },
+                "type_ident": {
+                  "Index": 13
+                }
+              },
+              {
+                "name": {
+                  "Index": 16
+                },
+                "colon": {
+                  "Index": 17
+                },
+                "type_ident": {
+                  "Index": 19
+                }
+              }
+            ],
+            "close_paren": {
+              "Index": 20
+            },
+            "arrow": {
+              "Index": 22
+            },
+            "return_type": {
+              "Index": 24
+            },
+            "block": {
+              "open_brace": {
+                "Index": 26
+              },
+              "statements": [
+                {
+                  "Index": 28
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "Index": 47
+              }
+            }
+          }
+        },
+        "content_length": 48
+      }
+    },
+    {
+      "Token": [
+        "Trivia",
+        {
+          "Whitespace": "\n"
+        }
+      ]
+    }
+  ],
+  "structure": {
+    "File": {
+      "items": [
+        {
+          "Index": 2
+        },
+        {
+          "Index": 4
+        },
+        {
+          "Index": 6
+        },
+        {
+          "Index": 8
+        },
+        {
+          "Index": 10
+        },
+        {
+          "Index": 14
+        },
+        {
+          "Index": 16
+        },
+        {
+          "Index": 18
+        },
+        {
+          "Index": 20
+        },
+        {
+          "Index": 22
+        },
+        {
+          "Index": 24
+        },
+        {
+          "Index": 28
+        },
+        {
+          "Index": 30
+        },
+        {
+          "Index": 32
+        },
+        {
+          "Index": 34
+        }
+      ]
+    }
+  },
+  "content_length": 36
+}

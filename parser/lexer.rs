@@ -1,3 +1,4 @@
+use serde::{Deserialize, Serialize};
 use std::fmt;
 
 // String literals
@@ -20,6 +21,7 @@ pub const PAREN_CLOSE: char = ')';
 // Keywords
 pub const PUB_TOKEN: &str = "pub";
 pub const FN_TOKEN: &str = "fn";
+pub const IF_TOKEN: &str = "if";
 pub const LET_TOKEN: &str = "let";
 pub const STRUCT_TOKEN: &str = "struct";
 pub const RETURN_TOKEN: &str = "return";
@@ -45,8 +47,12 @@ pub const OP_LT: char = '<';
 pub const OP_GE: &str = ">=";
 pub const OP_LE: &str = "<=";
 pub const OP_EQUALITY: &str = "==";
+pub const OP_NE: &str = "!=";
 pub const OP_AND: &str = "&&";
 pub const OP_OR: &str = "||";
+
+// Negate (unary !)
+pub const OP_NEGATE: char = '!';
 
 // Line comment
 pub const LINE_COMMENT_START: &str = "//";
@@ -54,7 +60,8 @@ pub const LINE_COMMENT_START: &str = "//";
 // Return type arrow
 pub const RETURN_TYPE_ARROW: &str = "->";
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
 pub enum Operator {
 	Add,
 	Sub,
@@ -64,24 +71,28 @@ pub enum Operator {
 	Pow,
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
 pub enum ComparisonOperator {
 	LessThan,
 	LessThanOrEqual,
 	GreaterThan,
 	GreaterThanOrEqual,
 	Equality,
+	NotEqual,
 	And,
 	Or,
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
 pub enum Mode {
 	Open,
 	Close,
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
 pub enum StringQuoting {
 	FullyQuoted,
 	Unquoted,
@@ -89,11 +100,13 @@ pub enum StringQuoting {
 	RightQuoted,
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
 pub enum Token {
 	// Keywords
 	Pub,
 	Fn,
+	If,
 	Let,
 	Struct,
 	Return,
@@ -103,6 +116,7 @@ pub enum Token {
 	Paren(Mode),
 	Brace(Mode),
 	Comparison(ComparisonOperator),
+	Negate,
 	Equals,
 	Semi,
 	Comma,
@@ -193,6 +207,7 @@ fn keyword_to_token(s: &str) -> Option<Token> {
 	match s {
 		PUB_TOKEN => Some(Token::Pub),
 		FN_TOKEN => Some(Token::Fn),
+		IF_TOKEN => Some(Token::If),
 		LET_TOKEN => Some(Token::Let),
 		STRUCT_TOKEN => Some(Token::Struct),
 		RETURN_TOKEN => Some(Token::Return),
@@ -215,6 +230,9 @@ fn lex_one(cursor: &mut Cursor) -> Option<Token> {
 	}
 	if cursor.advance_over(OP_AND) {
 		return Some(Token::Comparison(ComparisonOperator::And));
+	}
+	if cursor.advance_over(OP_NE) {
+		return Some(Token::Comparison(ComparisonOperator::NotEqual));
 	}
 	if cursor.advance_over(OP_GE) {
 		return Some(Token::Comparison(ComparisonOperator::GreaterThanOrEqual));
@@ -285,6 +303,9 @@ fn lex_one(cursor: &mut Cursor) -> Option<Token> {
 	if c == COLON {
 		cursor.advance();
 		return Some(Token::Colon);
+	}
+	if c == OP_NEGATE && cursor.advance().is_some() {
+		return Some(Token::Negate);
 	}
 
 	// Ident or keyword
@@ -452,9 +473,9 @@ pub fn lex(code: &str) -> Vec<Token> {
 					continue;
 				}
 				value.push(cursor.advance().unwrap());
+			}
+			continue;
 		}
-		continue;
-	}
 
 		// Single-line comment: // ... to end of line
 		if cursor.advance_over(LINE_COMMENT_START) {
@@ -480,6 +501,7 @@ impl fmt::Display for Token {
 		match self {
 			Token::Pub => write!(f, "{}", PUB_TOKEN),
 			Token::Fn => write!(f, "{}", FN_TOKEN),
+			Token::If => write!(f, "{}", IF_TOKEN),
 			Token::Let => write!(f, "{}", LET_TOKEN),
 			Token::Struct => write!(f, "{}", STRUCT_TOKEN),
 			Token::Return => write!(f, "{}", RETURN_TOKEN),
@@ -505,9 +527,11 @@ impl fmt::Display for Token {
 				ComparisonOperator::GreaterThan => write!(f, "{}", OP_GT),
 				ComparisonOperator::GreaterThanOrEqual => write!(f, "{}", OP_GE),
 				ComparisonOperator::Equality => write!(f, "{}", OP_EQUALITY),
+				ComparisonOperator::NotEqual => write!(f, "{}", OP_NE),
 				ComparisonOperator::And => write!(f, "{}", OP_AND),
 				ComparisonOperator::Or => write!(f, "{}", OP_OR),
 			},
+			Token::Negate => write!(f, "{}", OP_NEGATE),
 			Token::Equals => write!(f, "{}", EQUALS),
 			Token::Semi => write!(f, "{}", SEMI),
 			Token::Comma => write!(f, "{}", COMMA),
@@ -564,10 +588,7 @@ mod tests {
 	use super::*;
 
 	fn content_tokens(tokens: &[Token]) -> Vec<&Token> {
-		tokens
-			.iter()
-			.filter(|t| !matches!(t, Token::Whitespace(_)))
-			.collect()
+		tokens.iter().filter(|t| !matches!(t, Token::Whitespace(_))).collect()
 	}
 
 	#[test]
@@ -585,9 +606,12 @@ mod tests {
 
 	#[test]
 	fn keywords() {
-		let tokens = lex("pub fn let struct return");
+		let tokens = lex("pub fn if let struct return");
 		let c: Vec<_> = content_tokens(&tokens);
-		assert_eq!(c, vec![&Token::Pub, &Token::Fn, &Token::Let, &Token::Struct, &Token::Return]);
+		assert_eq!(
+			c,
+			vec![&Token::Pub, &Token::Fn, &Token::If, &Token::Let, &Token::Struct, &Token::Return]
+		);
 	}
 
 	#[test]
@@ -641,7 +665,7 @@ mod tests {
 
 	#[test]
 	fn multi_char_comparisons() {
-		let tokens = lex(">= <= == && ||");
+		let tokens = lex(">= <= == != && ||");
 		let c: Vec<_> = content_tokens(&tokens);
 		assert_eq!(
 			c,
@@ -649,10 +673,25 @@ mod tests {
 				&Token::Comparison(ComparisonOperator::GreaterThanOrEqual),
 				&Token::Comparison(ComparisonOperator::LessThanOrEqual),
 				&Token::Comparison(ComparisonOperator::Equality),
+				&Token::Comparison(ComparisonOperator::NotEqual),
 				&Token::Comparison(ComparisonOperator::And),
 				&Token::Comparison(ComparisonOperator::Or),
 			]
 		);
+	}
+
+	#[test]
+	fn negate() {
+		let tokens = lex("!x");
+		let c: Vec<_> = content_tokens(&tokens);
+		assert_eq!(c, vec![&Token::Negate, &Token::Ident("x".into())]);
+	}
+
+	#[test]
+	fn not_equal_before_negate() {
+		let tokens = lex("!=");
+		let c: Vec<_> = content_tokens(&tokens);
+		assert_eq!(c, vec![&Token::Comparison(ComparisonOperator::NotEqual)]);
 	}
 
 	#[test]

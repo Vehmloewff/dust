@@ -21,10 +21,6 @@ enum Command {
 		#[arg(value_name = "FILE")]
 		filepath: PathBuf,
 
-		/// Log the parsed AST
-		#[arg(long)]
-		ast: bool,
-
 		/// Log parse diagnostics (errors, warnings)
 		#[arg(long)]
 		diagnostics: bool,
@@ -44,40 +40,35 @@ fn main() {
 	match cli.command {
 		Command::Run {
 			filepath,
-			ast,
-			diagnostics,
+			diagnostics: show_diagnostics,
 		} => {
-			// let show_ast = ast;
-			// let show_diagnostics = diagnostics;
-			// // If neither flag given, show both
-			// let show_both = !show_ast && !show_diagnostics;
+			let code = match fs::read_to_string(&filepath) {
+				Ok(s) => s,
+				Err(e) => {
+					eprintln!("error: failed to read {}: {}", filepath.display(), e);
+					std::process::exit(1);
+				}
+			};
 
-			// let code = match fs::read_to_string(&filepath) {
-			// 	Ok(s) => s,
-			// 	Err(e) => {
-			// 		eprintln!("error: failed to read {}: {}", filepath.display(), e);
-			// 		std::process::exit(1);
-			// 	}
-			// };
+			let (node, diags) = parser::parse(&code);
 
-			// let (expression, diags) = parser::parse(&code);
+			if show_diagnostics {
+				if diags.is_empty() {
+					eprintln!("No diagnostics.");
+				} else {
+					for d in &diags {
+						eprintln!("{:?}", d);
+					}
+				}
+			}
 
-			// if show_diagnostics || show_both {
-			// 	if diags.is_empty() {
-			// 		eprintln!("No diagnostics.");
-			// 	} else {
-			// 		for d in &diags {
-			// 			eprintln!("{:?}", d);
-			// 		}
-			// 	}
-			// }
-
-			// if show_ast || show_both {
-			// 	match &expression {
-			// 		Some(ast) => println!("{:#?}", ast),
-			// 		None => println!("(parse did not produce an expression)"),
-			// 	}
-			// }
+			match serde_json::to_string_pretty(&node) {
+				Ok(json) => println!("{}", json),
+				Err(e) => {
+					eprintln!("error: failed to serialize AST as JSON: {}", e);
+					std::process::exit(1);
+				}
+			}
 		}
 		Command::Highlight { filepath } => {
 			let code = match filepath {
@@ -138,7 +129,7 @@ fn highlight(code: &str) {
 	for token in &tokens {
 		let mut spec = ColorSpec::new();
 		match token {
-			Token::Pub | Token::Fn | Token::Let | Token::Struct | Token::Return => {
+			Token::Pub | Token::Fn | Token::If | Token::Let | Token::Struct | Token::Return => {
 				spec.set_fg(Some(keyword()));
 			}
 			Token::String(_, _) | Token::RawString(_, _) => {
@@ -150,7 +141,7 @@ fn highlight(code: &str) {
 			Token::Ident(_) => {
 				spec.set_fg(Some(identifier()));
 			}
-			Token::Operator(_) | Token::Comparison(_) => {
+			Token::Operator(_) | Token::Comparison(_) | Token::Negate => {
 				spec.set_fg(Some(operator()));
 			}
 			Token::Paren(_)

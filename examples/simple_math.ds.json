@@ -1,0 +1,5172 @@
+{
+  "tokens": [
+    {
+      "token": {
+        "comment": "// A simple program that does some basic math and such."
+      }
+    },
+    {
+      "token": {
+        "whitespace": "\n\n"
+      }
+    },
+    {
+      "node": {
+        "tokens": [
+          {
+            "token": "fn"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "main"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "celsius"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "equals"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 25.0
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "equals"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "celsius_to_fahrenheit"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "celsius"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": {
+              "ident": "print"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "string": [
+                "",
+                "left_quoted"
+              ]
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "principal"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "equals"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 10000.0
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "rate"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "equals"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 0.05
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "years"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "equals"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 3.0
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "monthly"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "equals"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "loan_payment_monthly"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "principal"
+            }
+          },
+          {
+            "token": "comma"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "rate"
+            }
+          },
+          {
+            "token": "comma"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "years"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": {
+              "ident": "print"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "string": [
+                "Loan payment: ",
+                "left_quoted"
+              ]
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "n"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "equals"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 10.0
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "fib_n"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "equals"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "fibonacci"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "n"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": {
+              "ident": "print"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "string": [
+                "fibonacci(",
+                "left_quoted"
+              ]
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "a"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "equals"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 48.0
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "b"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "equals"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 18.0
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "g"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "equals"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "gcd"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "a"
+            }
+          },
+          {
+            "token": "comma"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "b"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": {
+              "ident": "print"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "string": [
+                "gcd(",
+                "left_quoted"
+              ]
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "x"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "equals"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 5.0
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "fact_x"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "equals"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "factorial"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "x"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": {
+              "ident": "print"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "string": [
+                "factorial(",
+                "left_quoted"
+              ]
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "base"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "equals"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 2.0
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "exp"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "equals"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 10.0
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "p"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "equals"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "int_power"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "base"
+            }
+          },
+          {
+            "token": "comma"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "exp"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": {
+              "ident": "print"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "string": [
+                "",
+                "left_quoted"
+              ]
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "name"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "string"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          }
+        ],
+        "structure": {
+          "function_def": {
+            "fn_keyword": {
+              "index": 0
+            },
+            "name": {
+              "index": 2
+            },
+            "open_paren": {
+              "index": 3
+            },
+            "params": [],
+            "close_paren": {
+              "index": 4
+            },
+            "arrow": "missing",
+            "return_type": "missing",
+            "block": {
+              "open_brace": {
+                "index": 6
+              },
+              "statements": [
+                {
+                  "index": 8
+                },
+                {
+                  "index": 20
+                },
+                {
+                  "index": 32
+                },
+                {
+                  "index": 38
+                },
+                {
+                  "index": 47
+                },
+                {
+                  "index": 56
+                },
+                {
+                  "index": 65
+                },
+                {
+                  "index": 83
+                },
+                {
+                  "index": 89
+                },
+                {
+                  "index": 98
+                },
+                {
+                  "index": 110
+                },
+                {
+                  "index": 116
+                },
+                {
+                  "index": 125
+                },
+                {
+                  "index": 134
+                },
+                {
+                  "index": 149
+                },
+                {
+                  "index": 155
+                },
+                {
+                  "index": 164
+                },
+                {
+                  "index": 176
+                },
+                {
+                  "index": 182
+                },
+                {
+                  "index": 191
+                },
+                {
+                  "index": 200
+                },
+                {
+                  "index": 215
+                },
+                {
+                  "index": 221
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "index": 229
+              }
+            }
+          }
+        },
+        "content_length": 230
+      }
+    },
+    {
+      "token": {
+        "whitespace": "\n\n"
+      }
+    },
+    {
+      "node": {
+        "tokens": [
+          {
+            "token": "fn"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "celsius_to_fahrenheit"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "c"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "arrow"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "return"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "c"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "mul"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 9.0
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "div"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 5.0
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "add"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 32.0
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          }
+        ],
+        "structure": {
+          "function_def": {
+            "fn_keyword": {
+              "index": 0
+            },
+            "name": {
+              "index": 2
+            },
+            "open_paren": {
+              "index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "index": 4
+                },
+                "colon": {
+                  "index": 5
+                },
+                "type_ident": {
+                  "index": 7
+                }
+              }
+            ],
+            "close_paren": {
+              "index": 8
+            },
+            "arrow": {
+              "index": 10
+            },
+            "return_type": {
+              "index": 12
+            },
+            "block": {
+              "open_brace": {
+                "index": 14
+              },
+              "statements": [
+                {
+                  "index": 16
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "index": 33
+              }
+            }
+          }
+        },
+        "content_length": 34
+      }
+    },
+    {
+      "token": {
+        "whitespace": "\n\n"
+      }
+    },
+    {
+      "node": {
+        "tokens": [
+          {
+            "token": "fn"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "fahrenheit_to_celsius"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "f"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "arrow"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "return"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "f"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "sub"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 32.0
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "mul"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 5.0
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "div"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 9.0
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          }
+        ],
+        "structure": {
+          "function_def": {
+            "fn_keyword": {
+              "index": 0
+            },
+            "name": {
+              "index": 2
+            },
+            "open_paren": {
+              "index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "index": 4
+                },
+                "colon": {
+                  "index": 5
+                },
+                "type_ident": {
+                  "index": 7
+                }
+              }
+            ],
+            "close_paren": {
+              "index": 8
+            },
+            "arrow": {
+              "index": 10
+            },
+            "return_type": {
+              "index": 12
+            },
+            "block": {
+              "open_brace": {
+                "index": 14
+              },
+              "statements": [
+                {
+                  "index": 16
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "index": 35
+              }
+            }
+          }
+        },
+        "content_length": 36
+      }
+    },
+    {
+      "token": {
+        "whitespace": "\n\n"
+      }
+    },
+    {
+      "node": {
+        "tokens": [
+          {
+            "token": "fn"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "loan_payment_monthly"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "principal"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": "comma"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "annual_rate"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": "comma"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "years"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "i32"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "arrow"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "n"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "equals"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "years"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "mul"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 12.0
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "r"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "equals"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "annual_rate"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "div"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 12.0
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "factor"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "equals"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "int_power"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "number": 1.0
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "add"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "r"
+            }
+          },
+          {
+            "token": "comma"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "n"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "return"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "principal"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "mul"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "r"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "mul"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "factor"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "div"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "factor"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "sub"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 1.0
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          }
+        ],
+        "structure": {
+          "function_def": {
+            "fn_keyword": {
+              "index": 0
+            },
+            "name": {
+              "index": 2
+            },
+            "open_paren": {
+              "index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "index": 4
+                },
+                "colon": {
+                  "index": 5
+                },
+                "type_ident": {
+                  "index": 7
+                }
+              },
+              {
+                "name": {
+                  "index": 10
+                },
+                "colon": {
+                  "index": 11
+                },
+                "type_ident": {
+                  "index": 13
+                }
+              },
+              {
+                "name": {
+                  "index": 16
+                },
+                "colon": {
+                  "index": 17
+                },
+                "type_ident": {
+                  "index": 19
+                }
+              }
+            ],
+            "close_paren": {
+              "index": 20
+            },
+            "arrow": {
+              "index": 22
+            },
+            "return_type": {
+              "index": 24
+            },
+            "block": {
+              "open_brace": {
+                "index": 26
+              },
+              "statements": [
+                {
+                  "index": 28
+                },
+                {
+                  "index": 41
+                },
+                {
+                  "index": 54
+                },
+                {
+                  "index": 73
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "index": 96
+              }
+            }
+          }
+        },
+        "content_length": 97
+      }
+    },
+    {
+      "token": {
+        "whitespace": "\n\n"
+      }
+    },
+    {
+      "node": {
+        "tokens": [
+          {
+            "token": "fn"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "fibonacci"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "n"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "i32"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "arrow"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "i32"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "if"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "n"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "comparison": "less_than_or_equal"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 0.0
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t\t"
+            }
+          },
+          {
+            "token": "return"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 0.0
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          }
+        ],
+        "structure": {
+          "function_def": {
+            "fn_keyword": {
+              "index": 0
+            },
+            "name": {
+              "index": 2
+            },
+            "open_paren": {
+              "index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "index": 4
+                },
+                "colon": {
+                  "index": 5
+                },
+                "type_ident": {
+                  "index": 7
+                }
+              }
+            ],
+            "close_paren": {
+              "index": 8
+            },
+            "arrow": {
+              "index": 10
+            },
+            "return_type": {
+              "index": 12
+            },
+            "block": {
+              "open_brace": {
+                "index": 14
+              },
+              "statements": [
+                {
+                  "index": 16
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "index": 35
+              }
+            }
+          }
+        },
+        "content_length": 36
+      }
+    },
+    {
+      "token": {
+        "whitespace": "\n\t"
+      }
+    },
+    {
+      "token": {
+        "whitespace": "\n"
+      }
+    },
+    {
+      "token": {
+        "whitespace": "\n\n"
+      }
+    },
+    {
+      "node": {
+        "tokens": [
+          {
+            "token": "fn"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "gcd"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "a"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "i32"
+            }
+          },
+          {
+            "token": "comma"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "b"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "i32"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "arrow"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "i32"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "if"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "b"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "comparison": "equality"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 0.0
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t\t"
+            }
+          },
+          {
+            "token": "return"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "a"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          }
+        ],
+        "structure": {
+          "function_def": {
+            "fn_keyword": {
+              "index": 0
+            },
+            "name": {
+              "index": 2
+            },
+            "open_paren": {
+              "index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "index": 4
+                },
+                "colon": {
+                  "index": 5
+                },
+                "type_ident": {
+                  "index": 7
+                }
+              },
+              {
+                "name": {
+                  "index": 10
+                },
+                "colon": {
+                  "index": 11
+                },
+                "type_ident": {
+                  "index": 13
+                }
+              }
+            ],
+            "close_paren": {
+              "index": 14
+            },
+            "arrow": {
+              "index": 16
+            },
+            "return_type": {
+              "index": 18
+            },
+            "block": {
+              "open_brace": {
+                "index": 20
+              },
+              "statements": [
+                {
+                  "index": 22
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "index": 41
+              }
+            }
+          }
+        },
+        "content_length": 42
+      }
+    },
+    {
+      "token": {
+        "whitespace": "\n\n"
+      }
+    },
+    {
+      "node": {
+        "tokens": [
+          {
+            "token": "fn"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "factorial"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "n"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "i32"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "arrow"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "i32"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "if"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "n"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "comparison": "less_than_or_equal"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 1.0
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t\t"
+            }
+          },
+          {
+            "token": "return"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 1.0
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          }
+        ],
+        "structure": {
+          "function_def": {
+            "fn_keyword": {
+              "index": 0
+            },
+            "name": {
+              "index": 2
+            },
+            "open_paren": {
+              "index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "index": 4
+                },
+                "colon": {
+                  "index": 5
+                },
+                "type_ident": {
+                  "index": 7
+                }
+              }
+            ],
+            "close_paren": {
+              "index": 8
+            },
+            "arrow": {
+              "index": 10
+            },
+            "return_type": {
+              "index": 12
+            },
+            "block": {
+              "open_brace": {
+                "index": 14
+              },
+              "statements": [
+                {
+                  "index": 16
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "index": 35
+              }
+            }
+          }
+        },
+        "content_length": 36
+      }
+    },
+    {
+      "token": {
+        "whitespace": "\n\n"
+      }
+    },
+    {
+      "node": {
+        "tokens": [
+          {
+            "token": "fn"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "int_power"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "base"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": "comma"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "exp"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "i32"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "arrow"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "if"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "exp"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "comparison": "equality"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 0.0
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t\t"
+            }
+          },
+          {
+            "token": "return"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 1.0
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "let"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "sq"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "equals"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "half"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "mul"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "half"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "if"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "exp"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "mod"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 2.0
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "comparison": "equality"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 1.0
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t\t"
+            }
+          },
+          {
+            "token": "return"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "base"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "mul"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "sq"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          }
+        ],
+        "structure": {
+          "function_def": {
+            "fn_keyword": {
+              "index": 0
+            },
+            "name": {
+              "index": 2
+            },
+            "open_paren": {
+              "index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "index": 4
+                },
+                "colon": {
+                  "index": 5
+                },
+                "type_ident": {
+                  "index": 7
+                }
+              },
+              {
+                "name": {
+                  "index": 10
+                },
+                "colon": {
+                  "index": 11
+                },
+                "type_ident": {
+                  "index": 13
+                }
+              }
+            ],
+            "close_paren": {
+              "index": 14
+            },
+            "arrow": {
+              "index": 16
+            },
+            "return_type": {
+              "index": 18
+            },
+            "block": {
+              "open_brace": {
+                "index": 20
+              },
+              "statements": [
+                {
+                  "index": 22
+                },
+                {
+                  "index": 41
+                },
+                {
+                  "index": 54
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "index": 81
+              }
+            }
+          }
+        },
+        "content_length": 82
+      }
+    },
+    {
+      "token": {
+        "whitespace": "\n\n"
+      }
+    },
+    {
+      "node": {
+        "tokens": [
+          {
+            "token": "fn"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "min_two"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "a"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": "comma"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "b"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "arrow"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "if"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "a"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "comparison": "less_than"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "b"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t\t"
+            }
+          },
+          {
+            "token": "return"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "a"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          }
+        ],
+        "structure": {
+          "function_def": {
+            "fn_keyword": {
+              "index": 0
+            },
+            "name": {
+              "index": 2
+            },
+            "open_paren": {
+              "index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "index": 4
+                },
+                "colon": {
+                  "index": 5
+                },
+                "type_ident": {
+                  "index": 7
+                }
+              },
+              {
+                "name": {
+                  "index": 10
+                },
+                "colon": {
+                  "index": 11
+                },
+                "type_ident": {
+                  "index": 13
+                }
+              }
+            ],
+            "close_paren": {
+              "index": 14
+            },
+            "arrow": {
+              "index": 16
+            },
+            "return_type": {
+              "index": 18
+            },
+            "block": {
+              "open_brace": {
+                "index": 20
+              },
+              "statements": [
+                {
+                  "index": 22
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "index": 41
+              }
+            }
+          }
+        },
+        "content_length": 42
+      }
+    },
+    {
+      "token": {
+        "whitespace": "\n\n"
+      }
+    },
+    {
+      "node": {
+        "tokens": [
+          {
+            "token": "fn"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "max_two"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "a"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": "comma"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "b"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "arrow"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "if"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "a"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "comparison": "greater_than"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "b"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t\t"
+            }
+          },
+          {
+            "token": "return"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "a"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          }
+        ],
+        "structure": {
+          "function_def": {
+            "fn_keyword": {
+              "index": 0
+            },
+            "name": {
+              "index": 2
+            },
+            "open_paren": {
+              "index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "index": 4
+                },
+                "colon": {
+                  "index": 5
+                },
+                "type_ident": {
+                  "index": 7
+                }
+              },
+              {
+                "name": {
+                  "index": 10
+                },
+                "colon": {
+                  "index": 11
+                },
+                "type_ident": {
+                  "index": 13
+                }
+              }
+            ],
+            "close_paren": {
+              "index": 14
+            },
+            "arrow": {
+              "index": 16
+            },
+            "return_type": {
+              "index": 18
+            },
+            "block": {
+              "open_brace": {
+                "index": 20
+              },
+              "statements": [
+                {
+                  "index": 22
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "index": 41
+              }
+            }
+          }
+        },
+        "content_length": 42
+      }
+    },
+    {
+      "token": {
+        "whitespace": "\n\n"
+      }
+    },
+    {
+      "node": {
+        "tokens": [
+          {
+            "token": "fn"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "clamp"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "low"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": "comma"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "x"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": "comma"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "high"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "arrow"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "if"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "x"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "comparison": "less_than"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "low"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t\t"
+            }
+          },
+          {
+            "token": "return"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "low"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          }
+        ],
+        "structure": {
+          "function_def": {
+            "fn_keyword": {
+              "index": 0
+            },
+            "name": {
+              "index": 2
+            },
+            "open_paren": {
+              "index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "index": 4
+                },
+                "colon": {
+                  "index": 5
+                },
+                "type_ident": {
+                  "index": 7
+                }
+              },
+              {
+                "name": {
+                  "index": 10
+                },
+                "colon": {
+                  "index": 11
+                },
+                "type_ident": {
+                  "index": 13
+                }
+              },
+              {
+                "name": {
+                  "index": 16
+                },
+                "colon": {
+                  "index": 17
+                },
+                "type_ident": {
+                  "index": 19
+                }
+              }
+            ],
+            "close_paren": {
+              "index": 20
+            },
+            "arrow": {
+              "index": 22
+            },
+            "return_type": {
+              "index": 24
+            },
+            "block": {
+              "open_brace": {
+                "index": 26
+              },
+              "statements": [
+                {
+                  "index": 28
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "index": 47
+              }
+            }
+          }
+        },
+        "content_length": 48
+      }
+    },
+    {
+      "token": {
+        "whitespace": "\n\t"
+      }
+    },
+    {
+      "token": {
+        "whitespace": "\n"
+      }
+    },
+    {
+      "token": {
+        "whitespace": "\n\n"
+      }
+    },
+    {
+      "node": {
+        "tokens": [
+          {
+            "token": "fn"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "abs_val"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "x"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "arrow"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "if"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "x"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "comparison": "less_than"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 0.0
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t\t"
+            }
+          },
+          {
+            "token": "return"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "sub"
+            }
+          },
+          {
+            "token": {
+              "ident": "x"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          }
+        ],
+        "structure": {
+          "function_def": {
+            "fn_keyword": {
+              "index": 0
+            },
+            "name": {
+              "index": 2
+            },
+            "open_paren": {
+              "index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "index": 4
+                },
+                "colon": {
+                  "index": 5
+                },
+                "type_ident": {
+                  "index": 7
+                }
+              }
+            ],
+            "close_paren": {
+              "index": 8
+            },
+            "arrow": {
+              "index": 10
+            },
+            "return_type": {
+              "index": 12
+            },
+            "block": {
+              "open_brace": {
+                "index": 14
+              },
+              "statements": [
+                {
+                  "index": 16
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "index": 36
+              }
+            }
+          }
+        },
+        "content_length": 37
+      }
+    },
+    {
+      "token": {
+        "whitespace": "\n\n"
+      }
+    },
+    {
+      "node": {
+        "tokens": [
+          {
+            "token": "fn"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "is_even"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "n"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "i32"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "arrow"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "bool"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "return"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "n"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "mod"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 2.0
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "comparison": "equality"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 0.0
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          }
+        ],
+        "structure": {
+          "function_def": {
+            "fn_keyword": {
+              "index": 0
+            },
+            "name": {
+              "index": 2
+            },
+            "open_paren": {
+              "index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "index": 4
+                },
+                "colon": {
+                  "index": 5
+                },
+                "type_ident": {
+                  "index": 7
+                }
+              }
+            ],
+            "close_paren": {
+              "index": 8
+            },
+            "arrow": {
+              "index": 10
+            },
+            "return_type": {
+              "index": 12
+            },
+            "block": {
+              "open_brace": {
+                "index": 14
+              },
+              "statements": [
+                {
+                  "index": 16
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "index": 29
+              }
+            }
+          }
+        },
+        "content_length": 30
+      }
+    },
+    {
+      "token": {
+        "whitespace": "\n\n"
+      }
+    },
+    {
+      "node": {
+        "tokens": [
+          {
+            "token": "fn"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "circle_area"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "radius"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "arrow"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "return"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 3.14159265359
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "mul"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "radius"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "mul"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "radius"
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          }
+        ],
+        "structure": {
+          "function_def": {
+            "fn_keyword": {
+              "index": 0
+            },
+            "name": {
+              "index": 2
+            },
+            "open_paren": {
+              "index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "index": 4
+                },
+                "colon": {
+                  "index": 5
+                },
+                "type_ident": {
+                  "index": 7
+                }
+              }
+            ],
+            "close_paren": {
+              "index": 8
+            },
+            "arrow": {
+              "index": 10
+            },
+            "return_type": {
+              "index": 12
+            },
+            "block": {
+              "open_brace": {
+                "index": 14
+              },
+              "statements": [
+                {
+                  "index": 16
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "index": 29
+              }
+            }
+          }
+        },
+        "content_length": 30
+      }
+    },
+    {
+      "token": {
+        "whitespace": "\n\n"
+      }
+    },
+    {
+      "node": {
+        "tokens": [
+          {
+            "token": "fn"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "average_three"
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "a"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": "comma"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "b"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": "comma"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "c"
+            }
+          },
+          {
+            "token": "colon"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": "arrow"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "f64"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "brace": "open"
+            }
+          },
+          {
+            "token": {
+              "whitespace": "\n\t"
+            }
+          },
+          {
+            "token": "return"
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "paren": "open"
+            }
+          },
+          {
+            "token": {
+              "ident": "a"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "add"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "b"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "add"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "ident": "c"
+            }
+          },
+          {
+            "token": {
+              "paren": "close"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "operator": "div"
+            }
+          },
+          {
+            "token": {
+              "whitespace": " "
+            }
+          },
+          {
+            "token": {
+              "number": 3.0
+            }
+          },
+          {
+            "token": "semi"
+          },
+          {
+            "token": {
+              "whitespace": "\n"
+            }
+          },
+          {
+            "token": {
+              "brace": "close"
+            }
+          }
+        ],
+        "structure": {
+          "function_def": {
+            "fn_keyword": {
+              "index": 0
+            },
+            "name": {
+              "index": 2
+            },
+            "open_paren": {
+              "index": 3
+            },
+            "params": [
+              {
+                "name": {
+                  "index": 4
+                },
+                "colon": {
+                  "index": 5
+                },
+                "type_ident": {
+                  "index": 7
+                }
+              },
+              {
+                "name": {
+                  "index": 10
+                },
+                "colon": {
+                  "index": 11
+                },
+                "type_ident": {
+                  "index": 13
+                }
+              },
+              {
+                "name": {
+                  "index": 16
+                },
+                "colon": {
+                  "index": 17
+                },
+                "type_ident": {
+                  "index": 19
+                }
+              }
+            ],
+            "close_paren": {
+              "index": 20
+            },
+            "arrow": {
+              "index": 22
+            },
+            "return_type": {
+              "index": 24
+            },
+            "block": {
+              "open_brace": {
+                "index": 26
+              },
+              "statements": [
+                {
+                  "index": 28
+                }
+              ],
+              "final_expression": null,
+              "close_brace": {
+                "index": 47
+              }
+            }
+          }
+        },
+        "content_length": 48
+      }
+    },
+    {
+      "token": {
+        "whitespace": "\n"
+      }
+    }
+  ],
+  "structure": {
+    "file": {
+      "items": [
+        {
+          "index": 2
+        },
+        {
+          "index": 4
+        },
+        {
+          "index": 6
+        },
+        {
+          "index": 8
+        },
+        {
+          "index": 10
+        },
+        {
+          "index": 14
+        },
+        {
+          "index": 16
+        },
+        {
+          "index": 18
+        },
+        {
+          "index": 20
+        },
+        {
+          "index": 22
+        },
+        {
+          "index": 24
+        },
+        {
+          "index": 28
+        },
+        {
+          "index": 30
+        },
+        {
+          "index": 32
+        },
+        {
+          "index": 34
+        }
+      ]
+    }
+  },
+  "content_length": 36
+}
