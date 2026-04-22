@@ -3,8 +3,6 @@ use std::fmt;
 
 // String literals
 pub const STRING_BOUNDARY: char = '"';
-pub const STRING_DOUBLE_QUOTE: char = '"';
-pub const STRING_SINGLE_QUOTE: char = '\'';
 pub const STRING_ESCAPE: char = '\\';
 pub const STRING_INTERPOLATION_START: &str = "${"; // string interpolation stop will stop at BRACE_CLOSE
 pub const RAW_STRING_NOTE: char = 'r';
@@ -100,6 +98,39 @@ pub enum StringQuoting {
 	RightQuoted,
 }
 
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum TokenKind {
+	Pub,
+	Fn,
+	If,
+	Let,
+	Struct,
+	Return,
+	Operator,
+	OpenParen,
+	CloseParen,
+	OpenBrace,
+	CloseBrace,
+	Comparison,
+	Negate,
+	Equals,
+	Semi,
+	Comma,
+	Colon,
+	Arrow,
+	Ident,
+	Number,
+	String,
+	RawString,
+	StringInterpolationStart,
+	StringInterpolationEnd,
+	Whitespace,
+	Comment,
+	Unknown,
+	StringNotTerminated,
+}
+
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
 pub enum Token {
@@ -137,6 +168,47 @@ pub enum Token {
 	Unknown(String),
 	/// A zero-width token that is placed at the end of a file if it contained an unterminated string literal
 	StringNotTerminated,
+}
+
+impl Token {
+	pub fn kind(&self) -> TokenKind {
+		self.into()
+	}
+}
+
+impl From<&Token> for TokenKind {
+	fn from(token: &Token) -> Self {
+		match token {
+			Token::Pub => TokenKind::Pub,
+			Token::Fn => TokenKind::Fn,
+			Token::If => TokenKind::If,
+			Token::Let => TokenKind::Let,
+			Token::Struct => TokenKind::Struct,
+			Token::Return => TokenKind::Return,
+			Token::Operator(_) => TokenKind::Operator,
+			Token::Paren(Mode::Open) => TokenKind::OpenParen,
+			Token::Paren(Mode::Close) => TokenKind::CloseParen,
+			Token::Brace(Mode::Open) => TokenKind::OpenBrace,
+			Token::Brace(Mode::Close) => TokenKind::CloseBrace,
+			Token::Comparison(_) => TokenKind::Comparison,
+			Token::Negate => TokenKind::Negate,
+			Token::Equals => TokenKind::Equals,
+			Token::Semi => TokenKind::Semi,
+			Token::Comma => TokenKind::Comma,
+			Token::Colon => TokenKind::Colon,
+			Token::Arrow => TokenKind::Arrow,
+			Token::Ident(_) => TokenKind::Ident,
+			Token::Number(_) => TokenKind::Number,
+			Token::String(..) => TokenKind::String,
+			Token::RawString(..) => TokenKind::RawString,
+			Token::StringInteropolationStart => TokenKind::StringInterpolationStart,
+			Token::StringInteropolationEnd => TokenKind::StringInterpolationEnd,
+			Token::Whitespace(_) => TokenKind::Whitespace,
+			Token::Comment(_) => TokenKind::Comment,
+			Token::Unknown(_) => TokenKind::Unknown,
+			Token::StringNotTerminated => TokenKind::StringNotTerminated,
+		}
+	}
 }
 
 struct Cursor {

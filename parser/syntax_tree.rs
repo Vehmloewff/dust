@@ -2,12 +2,12 @@ use crate::parser::Token;
 use serde::{Deserialize, Serialize};
 
 /// Reference to a token in a node's `tokens` array. Either an index into the array
-/// ([`Index`](TokenRef::Index)) or [`Missing`](TokenRef::Missing) when the parser
+/// ([`Index`](ChildRef::Index)) or [`Missing`](ChildRef::Missing) when the parser
 /// recovered from an error and the token was not present (e.g. omitted or invalid).
 ///
-/// **Option vs TokenRef:** Use [`Option`]&lt;[`TokenRef`]&gt; (or `Option<SomeStruct>`) only when
-/// the element is *legally* optional in the grammar. Use plain [`TokenRef`] for required
-/// elements; [`Missing`](TokenRef::Missing) there always indicates a syntax error and
+/// **Option vs ChildRef:** Use [`Option`]&lt;[`ChildRef`]&gt; (or `Option<SomeStruct>`) only when
+/// the element is *legally* optional in the grammar. Use plain [`ChildRef`] for required
+/// elements; [`Missing`](ChildRef::Missing) there always indicates a syntax error and
 /// error recovery.
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
@@ -33,7 +33,7 @@ pub enum NodeChild {
 /// A parse node: the unit of syntax that owns its token stream and structure.
 ///
 /// **Token storage model:** Every token for this node lives in `tokens`. The fields in
-/// `structure` (and its variants like [`BlockExpr`], [`IfExpr`]) are *[`TokenRef`]s* into
+/// `structure` (and its variants like [`BlockExpr`], [`IfExpr`]) are *[`ChildRef`]s* into
 /// `tokens`—e.g. `BlockExpr::open_brace` is the `{` token in this array,
 /// not the token itself. This keeps a single source of truth for token data and lets
 /// structure types stay small (just indices).
@@ -75,6 +75,72 @@ pub enum Structure {
 	ParenExpr(ParenExpr),
 	/// Unary operation: op operand (e.g. `-x`).
 	UnaryExpr(UnaryExpr),
+}
+
+impl From<FileStructure> for Structure {
+	fn from(value: FileStructure) -> Self {
+		Self::File(value)
+	}
+}
+
+impl From<FunctionDef> for Structure {
+	fn from(value: FunctionDef) -> Self {
+		Self::FunctionDef(value)
+	}
+}
+
+impl From<BlockExpr> for Structure {
+	fn from(value: BlockExpr) -> Self {
+		Self::BlockExpr(value)
+	}
+}
+
+impl From<IfExpr> for Structure {
+	fn from(value: IfExpr) -> Self {
+		Self::IfExpr(value)
+	}
+}
+
+impl From<LetStmt> for Structure {
+	fn from(value: LetStmt) -> Self {
+		Self::LetStmt(value)
+	}
+}
+
+impl From<ReturnStmt> for Structure {
+	fn from(value: ReturnStmt) -> Self {
+		Self::ReturnStmt(value)
+	}
+}
+
+impl From<ExprStmt> for Structure {
+	fn from(value: ExprStmt) -> Self {
+		Self::ExprStmt(value)
+	}
+}
+
+impl From<BinaryExpr> for Structure {
+	fn from(value: BinaryExpr) -> Self {
+		Self::BinaryExpr(value)
+	}
+}
+
+impl From<CallExpr> for Structure {
+	fn from(value: CallExpr) -> Self {
+		Self::CallExpr(value)
+	}
+}
+
+impl From<ParenExpr> for Structure {
+	fn from(value: ParenExpr) -> Self {
+		Self::ParenExpr(value)
+	}
+}
+
+impl From<UnaryExpr> for Structure {
+	fn from(value: UnaryExpr) -> Self {
+		Self::UnaryExpr(value)
+	}
 }
 
 // ---------------------------------------------------------------------------
@@ -138,7 +204,7 @@ pub struct IfExpr {
 }
 
 /// Optional type annotation on a let binding: `: type`. When present, both `colon` and
-/// `type_ident` are required (use [`TokenRef`] only; [`Missing`](TokenRef::Missing) = error).
+/// `type_ident` are required (use [`ChildRef`] only; [`Missing`](ChildRef::Missing) = error).
 #[derive(Debug, Serialize, Deserialize)]
 pub struct LetType {
 	pub colon: ChildRef,

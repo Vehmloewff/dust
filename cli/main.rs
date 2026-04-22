@@ -15,7 +15,7 @@ struct Cli {
 
 #[derive(clap::Subcommand)]
 enum Command {
-	/// Parse a file and log diagnostics and/or AST
+	/// Parse a file and log diagnostics and/or the syntax tree
 	Run {
 		/// Path to the source file to parse
 		#[arg(value_name = "FILE")]
@@ -65,7 +65,7 @@ fn main() {
 			match serde_json::to_string_pretty(&node) {
 				Ok(json) => println!("{}", json),
 				Err(e) => {
-					eprintln!("error: failed to serialize AST as JSON: {}", e);
+					eprintln!("error: failed to serialize syntax tree as JSON: {}", e);
 					std::process::exit(1);
 				}
 			}

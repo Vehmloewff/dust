@@ -16,7 +16,7 @@ impl TokenStream {
 		Self { tokens, pos: 0 }
 	}
 
-	/// Current index into the token vector (for building AST refs).
+	/// Current index into the token vector (for building syntax tree refs).
 	pub fn position(&self) -> usize {
 		self.pos
 	}
